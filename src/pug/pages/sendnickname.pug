@@ -1,0 +1,18 @@
+extends ../layout/layout
+
+block globalVars
+  - var currentPage = ""
+
+block body
+  +header("standart")
+  main 
+    .container
+        .send-block 
+            .send-block__note.title send yourself an image of your nickname to share with friends
+            form(action="")
+                .radio-form 
+                    input.radio-form__text-input.input(type="email" name="place" id="place" placeholder="enter your email address")
+                    .radio-form__submit 
+                        button.button.button--submit.button--disabled(type="submit") send
+        .created 
+            p created by conductor

@@ -1,0 +1,18 @@
+.input {
+    font-weight: 600;
+    font-size: size(25px);
+    line-height: size(20px);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: size(925px);
+    height: size(44px);
+    text-decoration: none;
+    color: $color-black;
+    border: 3px solid #000000;
+    border-radius: $border-radius;
+    text-align: center;
+    margin: 0 auto;
+    outline: none;
+}

@@ -1,0 +1,22 @@
+.result {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    text-align: center;
+    margin-top: size(54px);
+    width: 100%;
+    &__intro {
+        font-size: size(55px);
+        line-height: size(66px);
+        margin: 0 0 size(52px);
+    }
+    &__result {
+        font-size: size(162px);
+        line-height: size(114px);
+        margin: 0 0 size(70px);
+    }
+    &__button {
+        margin: 0 auto;
+        background-color: transparent;
+    }
+}

@@ -1,0 +1,70 @@
+extends ../layout/layout
+
+block globalVars
+  - var currentPage = ""
+
+block body
+  +header("standart")
+  main 
+    .container
+        
+        form(action="")
+            .block.question-1
+                h2.title what type of cyclist are you?
+                .radio-form 
+                    input.radio-form__input(type="radio" name="cyclist" id="goat" value="mountain goat")
+                    label.radio-form__label.button( for="goat") mountain goat
+                    input.radio-form__input(type="radio" name="cyclist" id="sprinter" value="full gas sprinter")
+                    label.radio-form__label.button( for="sprinter") full gas sprinter 
+                    input.radio-form__input(type="radio" name="cyclist" id="bandit" value="breakaway bandit")
+                    label.radio-form__label.button( for="bandit") breakaway bandit
+                    input.radio-form__input(type="radio" name="cyclist" id="botherer" value="broom wagon botherer")
+                    label.radio-form__label.button( for="botherer") broom wagon botherer
+                    input.radio-form__input(type="radio" name="cyclist" id="domestique" value="super domestique")
+                    label.radio-form__label.button( for="domestique") super domestique
+                    input.radio-form__input(type="radio" name="cyclist" id="captain" value="captain of the road")
+                    label.radio-form__label.button( for="captain") captain of the road
+                    .radio-form__submit 
+                        button.button.button--submit.button--disabled.radio-form__submit--1(type="button") onwards!
+            .block.question-2.hidden
+                h2.title please name a favourite place
+                .radio-form 
+                    input.radio-form__text-input.input(type="text" name="place" id="place" placeholder="enter the city, town, village or place that means something to you")
+                    p.radio-form__note psst... try and keep it under 20 characters in length
+                    .radio-form__submit 
+                        button.button.button--submit.button--disabled.radio-form__submit--2(type="submit") next
+        .block.result.hidden
+            canvas#textCanvas(height="200")
+            img#image
+            p.result__intro congratulations. you are...
+            p.result__result  the butterfly of bermondsey
+            button.result__button.button(type="button") email yourself your nickname   
+        .send-block.hidden 
+            .send-block__note.title send yourself an image of your nickname to share with friends
+            form(action="")
+                .radio-form 
+                    input.radio-form__text-input.input(type="email" name="place" id="place" placeholder="enter your email address")
+                    .radio-form__submit 
+                        button.button.button--submit.button--disabled(type="submit") send            
+        .radio-form__reset 
+            a.radio-form__reset-label(href="./question-1.html") 
+                +svg-icon("restart")
+        
+        .created 
+          p created by conductor
+        //- .main-page.loading
+        //-     .big-letters.big-letters--loading
+        //-     .big-letters__row.big-letters__row--small 
+        //-         span king
+        //-         span watchmaker 
+        //-     .big-letters__row.big-letters__row--small
+        //-         span fast train
+        //-         span eagle 
+        //-     .big-letters__row.big-letters__row--small
+        //-         span little prince 
+        //-     .big-letters__row.big-letters__row--small
+        //-         span lion
+        //-         span angel of the mo 
+        //-     +banner
+        
+        

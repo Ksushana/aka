@@ -1,0 +1,18 @@
+extends ../layout/layout
+
+block globalVars
+  - var currentPage = "main"
+  - var currentPageColor = "black"
+
+block body
+  +header("main")
+  main 
+    .container
+      .main-page 
+        .big-letters 
+          .big-letters__row.big-letters__row--1 the 
+          .big-letters__row.big-letters__row--2 eagle 
+          .big-letters__row.big-letters__row--3 of 
+          .big-letters__row.big-letters__row--4 toledo 
+        a.button.button--white.main-page__button(href="./randomizer.html") let’s begin
+        +banner

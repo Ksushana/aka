@@ -1,0 +1,70 @@
+.radio-form {
+    
+    display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+    &__submit {
+        width: 100%;
+        margin: size(50px) auto auto;
+        display: flex;
+        justify-content: center;
+        button {
+            transition: all $transition-duration;
+        }
+    }
+    
+    &__label {
+        margin-bottom: size(30px);
+        transition: background-color $transition-duration, color $transition-duration;
+    }
+    &__input {
+        display: none;
+
+        
+        &:checked + label {
+            background-color: $color-black;
+            color: $color-white;
+        }
+        &:checked ~ .radio-form__submit .button--submit {
+            pointer-events: initial;
+            background-color: $color-black;
+            border: 3px solid #000000;
+            color: $color-white;
+        }
+        
+    }
+    &__text-input {
+        &:not(:placeholder-shown) ~ .radio-form__submit .button--submit {
+            pointer-events: initial;
+            background-color: $color-black;
+            border: 3px solid #000000;
+            color: $color-white;
+        }
+    }
+    &__reset {
+        position: absolute;
+        right: size(40px);
+        bottom: size(48px);
+        
+    }
+    &__reset-input {
+        display: none;
+    }
+    &__reset-label {
+        width: size(18px);
+        height: size(22px);
+        display: block;
+        color: $color-black;
+        svg {
+            height: 100%;
+            width: 100%;
+        }
+    }
+    &__note {
+        color: $color-grey;
+        text-align: center;
+        width: 100%;
+        margin-top: size(33px);
+    }
+}

@@ -1,0 +1,22 @@
+extends ../layout/layout
+
+block globalVars
+  - var currentPage = ""
+
+block body
+  +header("standart")
+  main 
+    .container
+        h1.title please name a favourite place
+        .radio-form 
+            form(action="")
+              input.radio-form__text-input.input(type="text" name="place" id="place" placeholder="enter the city, town, village or place that means something to you")
+              p.radio-form__note psst... try and keep it under 20 characters in length
+              .radio-form__submit 
+                  button.button.button--submit.button--disabled(type="submit") next
+              .radio-form__reset 
+                  a.radio-form__reset-label(href="./question-1.html") 
+                    +svg-icon("restart")
+                     
+        .created 
+          p created by conductor

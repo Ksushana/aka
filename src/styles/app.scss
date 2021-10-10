@@ -1,0 +1,38 @@
+// Normalize
+@import "normalize.css";
+@import "~nouislider/distribute/nouislider.min.css";
+@import "flatpickr";
+@import "tippy.js/dist/tippy.css";
+
+// Global
+@import "global/variables";
+@import "global/mixins";
+@import "global/functions";
+
+
+// Fonts
+@import "global/fonts";
+
+
+// Common
+@import "global/common";
+@import "global/grid";
+
+
+// Vendor
+
+
+// Partials
+@import "partials/header";
+@import "partials/big-letters";
+@import "partials/button";
+@import "partials/main-page";
+@import "partials/banner";
+@import "partials/title";
+@import "partials/radio-form";
+@import "partials/created";
+@import "partials/input";
+@import "partials/result";
+@import "partials/send-block";
+@import "partials/final";
+// Pages

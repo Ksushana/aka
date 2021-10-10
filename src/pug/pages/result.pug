@@ -1,0 +1,18 @@
+extends ../layout/layout
+
+block globalVars
+  - var currentPage = ""
+
+block body
+  +header("standart")
+  main 
+    .container
+        .result
+            p.result__intro congratulations. you are...
+            p.result__result  the butterfly of bermondsey
+            a.result__button.button(href="./sendnickname") email yourself your nickname   
+        .radio-form__reset 
+            a.radio-form__reset-label(href="./question-1.html") 
+                +svg-icon("restart")
+        .created 
+          p created by conductor

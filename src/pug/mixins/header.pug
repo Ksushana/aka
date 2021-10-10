@@ -1,0 +1,23 @@
+mixin header(type="standart")
+  - var className = 'header'
+  
+  if type == "main"
+    header.header--black(class=className)
+      .header__logo
+        +svg-icon("logo")
+      p.header__text 
+        | created by conductor <br>
+        | a design agency dedicated to cycling <br>
+        | aka.conductorstudio.com
+  if type == "loading"
+    header.header--black(class=className)
+      .header__logo
+        +svg-icon("logo")
+      p.header__text 
+        | please wait.... <br>
+        | We are digging deep into the archives for your legendary cycling nickname
+  if type == "standart"
+    header(class=className)
+      .header__logo.header__logo--white
+        +svg-icon("logo")
+  

@@ -1,0 +1,11 @@
+// @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@font-face {
+  font-family: 'test-founders-grotesk-x-condensed';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url($font-path + 'test-founders-grotesk-x-condensed-semibold.woff') format('woff'),
+       url($font-path + 'test-founders-grotesk-x-condensed-semibold.woff2') format('woff2');
+}
+

@@ -1,0 +1,33 @@
+.header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: size(40px);
+    &__logo {
+        width: size(94px);
+        height: size(70px);
+        display: flex;
+        
+        svg {
+            width: 100%;
+            height: 100%;
+            margin: auto;
+            color: $color-black;
+        }
+    }
+    &__text {
+        font-weight: 600;
+        font-size: size(25px);
+        line-height: size(20px);
+        text-align: center;
+        margin: 16px 0 0;
+    }
+
+    &--black {
+        color: $color-white;
+        text-transform: uppercase;
+        svg {
+            color: $color-white;
+        }
+    }
+}
