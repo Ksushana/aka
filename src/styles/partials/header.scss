@@ -7,6 +7,10 @@
         width: size(94px);
         height: size(70px);
         display: flex;
+        @media  (max-width:540px) {
+            width: 94px;
+            height: 70px;
+        }
         
         svg {
             width: 100%;
