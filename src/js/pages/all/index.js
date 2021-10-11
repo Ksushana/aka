@@ -84,13 +84,11 @@ function getData(evt) {
     resultText = `${nickname} of ${place}`;
 }
 
-
-
 function shareFacebook() {
     var fbButton = document.getElementById('fb-share-button');
     if (fbButton) {
-        var url = window.location.href;
-
+        var url = "https://img.bruzu.com/?bi=https://source.unsplash.com/27HiryxnHJk/500x500&bi.o=undefined&h=500&w=500&a.tp=textbox&a.ox=center&a.oy=center&a.x=250&a.y=250&a.w=503&a.h=122&a.t=Vaulter%20of%2033e3e3ee3e3&a.ta=center&a.fs=60&a.lh=0.8&a.fw=700&a.ff=Space Grotesk&a.maxHeight=500";
+        
         fbButton.addEventListener('click', function() {
             window.open('https://www.facebook.com/sharer/sharer.php?u=' + url,
                 'facebook-share-dialog',
@@ -100,8 +98,6 @@ function shareFacebook() {
         });
     }
 };
-
-shareFacebook()
 
 function generateQR() {
     const url = `https://ksushana.github.io/aka/build/result.html?${resultText}`;
@@ -141,6 +137,7 @@ if(randomize) {
 const imageElem = document.querySelector('.image-share-block img');
 if (imageElem) {
     imageElem.src="https://img.bruzu.com/?bi=https://source.unsplash.com/27HiryxnHJk/500x500&bi.o=undefined&h=500&w=500&a.tp=textbox&a.ox=center&a.oy=center&a.x=250&a.y=250&a.w=503&a.h=122&a.t=" + window.location.search.replace('?', '') + "&a.ta=center&a.fs=60&a.lh=0.8&a.fw=700&a.ff=Space Grotesk&a.maxHeight=500";
+    shareFacebook()
 }
 
 
