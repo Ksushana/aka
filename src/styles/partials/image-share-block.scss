@@ -32,8 +32,9 @@
     flex-direction: column;
     
     img {
-        width: 41%;
+        width: 90%;
         margin: 30px auto;
+        max-width: 500px;
     }
     &__share {
         margin: 0 auto;
