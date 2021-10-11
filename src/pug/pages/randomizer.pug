@@ -34,24 +34,25 @@ block body
                     .radio-form__submit 
                         button.button.button--submit.button--disabled.radio-form__submit--2(type="submit") next
         .block.result.hidden
-            
-            
             p.result__intro congratulations. you are...
             p#contentToWrite1.result__result  the butterfly of bermondsey
-            canvas#canvas( width="200" height="200" style="border: solid 1px gray;")
-            img#exportedImage( width="200" height="200" src="#")
-            button.result__button.button(type="button" name="name" value="export canvas to image" onclick="exportImage();" ) email yourself your nickname   
+            button.result__button.button(type="button" name="name" ) generate qr with your nickname   
         .send-block.hidden 
-            .send-block__note.title send yourself an image of your nickname to share with friends
-            form(action="")
-                .radio-form 
-                    input.radio-form__text-input.input(type="email" name="place" id="place" placeholder="enter your email address")
-                    .radio-form__submit 
-                        button.button.button--submit.button--disabled(type="submit") send            
+            .send-block__note.title scan the qr code with your nickname to share with friends
+            #qrcode
+            a.button.send-block--finish( href="final.html") Finish            
         .radio-form__reset 
             a.radio-form__reset-label( onClick="window.location.reload()") 
                 +svg-icon("restart")
-        
+        //- .image-share-block.hidden
+        //-     img#image(src="")
+        //-     .image-share-block__share 
+        //-       .image-share-block__facebook
+        //-         #fb-share-button
+        //-             svg(viewBox="0 0 12 12" preserveAspectRatio="xMidYMid meet")
+        //-                 path(class="svg-icon-path" d="M9.1,0.1V2H8C7.6,2,7.3,2.1,7.1,2.3C7,2.4,6.9,2.7,6.9,3v1.4H9L8.8,6.5H6.9V12H4.7V6.5H2.9V4.4h1.8V2.8 c0-0.9,0.3-1.6,0.7-2.1C6,0.2,6.6,0,7.5,0C8.2,0,8.7,0,9.1,0.1z" )
+        //-             span Share
+        //-       .image-share-block__instagram
         .created 
           p created by conductor
         .main-page.loading

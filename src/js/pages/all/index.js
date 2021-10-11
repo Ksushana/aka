@@ -7,8 +7,7 @@ const ImageBlock = document.querySelector('.send-block');
 const imageButton = document.querySelector('.result__button');
 const result = document.querySelector('.result__result');
 const loadingBlock = document.querySelector('.loading');
-// const canvastext = document.getElementById('textCanvas').getContext('2d'); 
-// const imageElem = document.getElementById('image');
+const shareBlock = document.querySelector('.image-share-block');
 
 function switchToNextQuestion() {
     firstQuestion.classList.add('hidden');
@@ -39,7 +38,6 @@ function getData(evt) {
      }, 2000);
     const cyclist = document.getElementsByName('cyclist')[0].value;
     const place = document.getElementsByName('place')[0].value;
-    // getDataFromTable();
     const categoryNicknames = {
         "mountain goat": ['Eagle', 'Tornado','Concorde', 'Butterfly', 'Goat','Sherpa', 'Squirrel'],
         "full gas sprinter": ['Volcano', 'Bomb','Boiling Pan', 'Combustion Engine','Dynamite', 'Throttle'],
@@ -49,40 +47,60 @@ function getData(evt) {
         "captain of the road": ['Headteacher', 'Scoutmaster','Calculator', 'Filofax','Skipper', 'Boss'],
     };
     const nicknameOptions = categoryNicknames[cyclist]
-    console.log(cyclist)
     const nickname = nicknameOptions[Math.floor(Math.random()*nicknameOptions.length)]
     result.innerHTML = nickname + "<br>" + " of " + place;
-    // var canvas = document.getElementById("canvas");
-    // var context = canvas.getContext("2d");
-    // context.font = "20px Georgia";
-    // context.textAlign = "center";
-    // var ele = document.getElementById("contentToWrite1");
-    // if (ele.textContent) {
-    // // for firefox
-    // context.fillText(ele.textContent, 10, 90);
-    // } else {
-    // // for other browser
-    // context.fillText(ele.innerText, 10, 90);
-    // }
-    // var img = document.getElementById("exportedImage");
-    // img.src = canvas.toDataURL('image/png');
+    // imageElem.src="https://img.bruzu.com/?bi=https://source.unsplash.com/27HiryxnHJk/500x500&bi.o=undefined&h=500&w=500&a.tp=textbox&a.ox=center&a.oy=center&a.x=250&a.y=250&a.w=503&a.h=122&a.t=" + nickname + " of " + place + "&a.ta=center&a.fs=60&a.lh=0.8&a.fw=700&a.ff=Space Grotesk&a.maxHeight=500"
 }
 
 resultBtn.addEventListener('click', getData);
+
+function showFinalImage() {
+    resultBlock.classList.add('hidden');
+    shareBlock.classList.remove('hidden');
+}
+
+function shareFacebook() {
+    var fbButton = document.getElementById('fb-share-button');
+    if (fbButton) {
+        var url = window.location.href;
+
+        fbButton.addEventListener('click', function() {
+            window.open('https://www.facebook.com/sharer/sharer.php?u=' + url,
+                'facebook-share-dialog',
+                'width=800,height=600'
+            );
+            return false;
+        });
+    }
+    
+    
+};
+shareFacebook()
+
+function generateQR() {
+    const qrcode = new QRCode(document.getElementById('qrcode'), {
+        text: 'https://ksushana.github.io/aka/build/result.html',
+        width: 128,
+        height: 128,
+        colorDark : '#000',
+        colorLight : '#fff',
+        correctLevel : QRCode.CorrectLevel.H
+      });
+}
+
 
 function generateImagePage() {
     resultBlock.classList.add('hidden');
     ImageBlock.classList.remove('hidden');
 }
 
-
 function onGenerateBtnClick() {
-    generateImagePage();
-    // generateCanvas();
+    generateImagePage()
+    generateQR()
 }
 
-
 imageButton.addEventListener('click', onGenerateBtnClick, false);
+
 
 
 export default init;

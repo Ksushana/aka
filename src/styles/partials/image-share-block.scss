@@ -1,0 +1,39 @@
+#fb-share-button {
+    background: #3b5998;
+    border-radius: 3px;
+    font-weight: 600;
+    padding: 5px 8px;
+    display: inline-flex;
+    position: static;
+}
+
+#fb-share-button:hover {
+    cursor: pointer;
+    background: #213A6F
+}
+
+#fb-share-button svg {
+    width: 18px;
+    fill: white;
+    vertical-align: middle;
+    border-radius: 2px
+}
+
+#fb-share-button span {
+    vertical-align: middle;
+    color: white;
+    font-size: 14px;
+    padding: 0 3px
+}
+
+.image-share-block {
+    display: flex;
+    flex-direction: column;
+    img {
+        width: 41%;
+        margin: 30px auto;
+    }
+    &__share {
+        margin: 0 auto;
+    }
+}

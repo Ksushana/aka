@@ -7,4 +7,11 @@
     input {
         margin-bottom: size(90px);
     }
+    #qrcode {
+        margin: 30px auto;
+        width: fit-content;
+    }
+    &--finish {
+        margin: 0 auto;
+    }
 }
