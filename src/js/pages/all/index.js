@@ -6,28 +6,37 @@ const resultBlock = document.querySelector('.result');
 const ImageBlock = document.querySelector('.send-block');
 const imageButton = document.querySelector('.result__button');
 const result = document.querySelector('.result__result');
-const canvastext = document.getElementById('textCanvas').getContext('2d'); 
-const imageElem = document.getElementById('image'); //Image element
+const loadingBlock = document.querySelector('.loading');
+// const canvastext = document.getElementById('textCanvas').getContext('2d'); 
+// const imageElem = document.getElementById('image');
 
-// alert(result);
 function switchToNextQuestion() {
     firstQuestion.classList.add('hidden');
     secondQuestion.classList.remove('hidden');
 }
 nextBtn.addEventListener('click', switchToNextQuestion);
 
-const getPeopleRecords = () =>
-  fetch("https://api.airtable.com/v0/appcM5XpJx4Ghrw0r/tblVm2XRmKONfU09o?api_key=keyIiN3plrMmK76py&")
-    .then(response => response.json())
-    .then(records => console.log("RECORDS: ", records));
-function getDataFromTable() {
-    getPeopleRecords();
-}
+// const getPeopleRecords = () =>
+//   fetch("https://api.airtable.com/v0/appcM5XpJx4Ghrw0r/tblVm2XRmKONfU09o?api_key=keyIiN3plrMmK76py&")
+//     .then(response => response.json())
+//     .then(records => console.log("RECORDS: ", records));
+// function getDataFromTable() {
+//     getPeopleRecords();
+// }
 
+function showLoadingBlock() {
+    loadingBlock.classList.add('loading--is-shown');
+    setTimeout(function(){ 
+        loadingBlock.classList.remove('loading--is-shown');
+     }, 3000);
+}
 function getData(evt) {
     evt.preventDefault();
-    secondQuestion.classList.add('hidden');
-    resultBlock.classList.remove('hidden');
+    showLoadingBlock();
+    setTimeout(function(){ 
+        secondQuestion.classList.add('hidden');
+        resultBlock.classList.remove('hidden');
+     }, 2000);
     const cyclist = document.getElementsByName('cyclist')[0].value;
     const place = document.getElementsByName('place')[0].value;
     // getDataFromTable();
@@ -42,27 +51,34 @@ function getData(evt) {
     const nicknameOptions = categoryNicknames[cyclist]
     console.log(cyclist)
     const nickname = nicknameOptions[Math.floor(Math.random()*nicknameOptions.length)]
-    result.innerHTML = nickname + " " + place;
+    result.innerHTML = nickname + "<br>" + " of " + place;
+    // var canvas = document.getElementById("canvas");
+    // var context = canvas.getContext("2d");
+    // context.font = "20px Georgia";
+    // context.textAlign = "center";
+    // var ele = document.getElementById("contentToWrite1");
+    // if (ele.textContent) {
+    // // for firefox
+    // context.fillText(ele.textContent, 10, 90);
+    // } else {
+    // // for other browser
+    // context.fillText(ele.innerText, 10, 90);
+    // }
+    // var img = document.getElementById("exportedImage");
+    // img.src = canvas.toDataURL('image/png');
 }
 
 resultBtn.addEventListener('click', getData);
 
-function generateImage(evt) {
+function generateImagePage() {
     resultBlock.classList.add('hidden');
     ImageBlock.classList.remove('hidden');
 }
-    
-function generateCanvas() {
-    // // console.log(canvastext)
-    // canvastext.canvas.width = canvastext.measureText(this.value).width;
-    // canvastext.fillText(this.value, 0, 10);
-    // imageElem.src = canvastext.canvas.toDataURL();
-    // console.log(imageElem.src);
-}
+
 
 function onGenerateBtnClick() {
-    generateImage();
-    generateCanvas();
+    generateImagePage();
+    // generateCanvas();
 }
 
 

@@ -49,12 +49,18 @@ main {
   overflow: hidden;
 }
 
-#textCanvas {
+#canvas {
   display: none;
 }
 
 canvas {
   border: 1px black solid;
+}
+
+#exportedImage {
+  background-image: url(./../images/bg.jpeg);
+  background-repeat: no-repeat;
+  display: none;
 }
 
 // .h1 {

@@ -34,11 +34,13 @@ block body
                     .radio-form__submit 
                         button.button.button--submit.button--disabled.radio-form__submit--2(type="submit") next
         .block.result.hidden
-            canvas#textCanvas(height="200")
-            img#image
+            
+            
             p.result__intro congratulations. you are...
-            p.result__result  the butterfly of bermondsey
-            button.result__button.button(type="button") email yourself your nickname   
+            p#contentToWrite1.result__result  the butterfly of bermondsey
+            canvas#canvas( width="200" height="200" style="border: solid 1px gray;")
+            img#exportedImage( width="200" height="200" src="#")
+            button.result__button.button(type="button" name="name" value="export canvas to image" onclick="exportImage();" ) email yourself your nickname   
         .send-block.hidden 
             .send-block__note.title send yourself an image of your nickname to share with friends
             form(action="")
@@ -47,24 +49,26 @@ block body
                     .radio-form__submit 
                         button.button.button--submit.button--disabled(type="submit") send            
         .radio-form__reset 
-            a.radio-form__reset-label(href="./question-1.html") 
+            a.radio-form__reset-label( onClick="window.location.reload()") 
                 +svg-icon("restart")
         
         .created 
           p created by conductor
-        //- .main-page.loading
-        //-     .big-letters.big-letters--loading
-        //-     .big-letters__row.big-letters__row--small 
-        //-         span king
-        //-         span watchmaker 
-        //-     .big-letters__row.big-letters__row--small
-        //-         span fast train
-        //-         span eagle 
-        //-     .big-letters__row.big-letters__row--small
-        //-         span little prince 
-        //-     .big-letters__row.big-letters__row--small
-        //-         span lion
-        //-         span angel of the mo 
-        //-     +banner
-        
+        .main-page.loading
+            +header("loading")
+            .container
+                .main-page 
+                    .big-letters.big-letters--loading
+                        .big-letters__row.big-letters__row--small 
+                            span king
+                            span watchmaker 
+                        .big-letters__row.big-letters__row--small
+                            span fast train
+                            span eagle 
+                        .big-letters__row.big-letters__row--small
+                            span little prince 
+                        .big-letters__row.big-letters__row--small
+                            span lion
+                            span angel of the mo 
+                    +banner
         

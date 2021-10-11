@@ -1,3 +1,15 @@
 .loading {
-    // position: fixed;
+    position: fixed;
+    opacity: 0;
+    pointer-events: none;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: $color-black;
+    color: $color-white;
+    transition: opacity 0.5s;
+    &--is-shown {
+      opacity: 1;
+    }
 }

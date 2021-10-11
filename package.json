@@ -39,12 +39,14 @@
     "@popperjs/core": "^2.6.0",
     "accordion-js": "^3.1.1",
     "airtable": "^0.11.1",
+    "axios": "^0.22.0",
     "custom-select": "^1.1.15",
     "flatpickr": "^4.6.9",
     "micromodal": "^0.4.6",
     "normalize.css": "^8.0.1",
     "nouislider": "^14.6.3",
     "tablesort": "^5.2.1",
+    "text-to-image": "^4.1.1",
     "tippy.js": "^6.2.7"
   }
 }
