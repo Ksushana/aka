@@ -138,7 +138,7 @@ if(randomize) {
     imageButton.addEventListener('click', onGenerateBtnClick, false);
 }
 
-const imageElem = document.querySelector('.image-share-block');
+const imageElem = document.querySelector('.image-share-block img');
 if (imageElem) {
     imageElem.src="https://img.bruzu.com/?bi=https://source.unsplash.com/27HiryxnHJk/500x500&bi.o=undefined&h=500&w=500&a.tp=textbox&a.ox=center&a.oy=center&a.x=250&a.y=250&a.w=503&a.h=122&a.t=" + window.location.search.replace('?', '') + "&a.ta=center&a.fs=60&a.lh=0.8&a.fw=700&a.ff=Space Grotesk&a.maxHeight=500";
 }
