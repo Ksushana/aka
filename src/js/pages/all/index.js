@@ -7,22 +7,50 @@ const ImageBlock = document.querySelector('.send-block');
 const imageButton = document.querySelector('.result__button');
 const result = document.querySelector('.result__result');
 const loadingBlock = document.querySelector('.loading');
-const shareBlock = document.querySelector('.image-share-block');
+// const shareBlock = document.querySelector('.image-share-block');
+const randomize = document.querySelector('.randomize');
 
 function switchToNextQuestion() {
     firstQuestion.classList.add('hidden');
     secondQuestion.classList.remove('hidden');
 }
 
-nextBtn.addEventListener('click', switchToNextQuestion);
 
-// const getPeopleRecords = () =>
-//   fetch("https://api.airtable.com/v0/appcM5XpJx4Ghrw0r/tblVm2XRmKONfU09o?api_key=keyIiN3plrMmK76py&")
-//     .then(response => response.json())
-//     .then(records => console.log("RECORDS: ", records));
-// function getDataFromTable() {
-//     getPeopleRecords();
-// }
+
+function fetchNicknamesPage(offset) {
+    return fetch(`https://api.airtable.com/v0/appcM5XpJx4Ghrw0r/tblVm2XRmKONfU09o?api_key=keyIiN3plrMmK76py&offset=${offset || ''}`)
+        .then(response => response.json())
+        .then(json => json);
+}
+
+const airtableRecords = [];
+const airtablePerPage = 100;
+function getAirtableRecords(offset) {
+    return fetchNicknamesPage(offset)
+        .then(page => {
+            const { records } = page;
+            airtableRecords.push(...records);
+            if (records.length === airtablePerPage) {
+                getAirtableRecords(page.offset);
+            }
+        });
+}
+
+const categoryNicknames = {};
+function getNicknameOptions() {
+    return getAirtableRecords()
+        .then(() => {
+            airtableRecords.forEach(record => {
+                const category = record.fields['Category'].toLowerCase();
+                const name = record.fields['Name'];
+                if (!categoryNicknames[category]) {
+                    categoryNicknames[category] = [];
+                }
+                categoryNicknames[category].push(name);
+            }) 
+        });
+}
+getNicknameOptions();
 
 function showLoadingBlock() {
     loadingBlock.classList.add('loading--is-shown');
@@ -30,6 +58,8 @@ function showLoadingBlock() {
         loadingBlock.classList.remove('loading--is-shown');
      }, 3000);
 }
+
+let resultText = null;
 function getData(evt) {
     evt.preventDefault();
     showLoadingBlock();
@@ -39,26 +69,22 @@ function getData(evt) {
      }, 2000);
     const cyclist = document.getElementsByName('cyclist')[0].value;
     const place = document.getElementsByName('place')[0].value;
-    const categoryNicknames = {
-        "mountain goat": ['Eagle', 'Tornado','Concorde', 'Butterfly', 'Goat','Sherpa', 'Squirrel'],
-        "full gas sprinter": ['Volcano', 'Bomb','Boiling Pan', 'Combustion Engine','Dynamite', 'Throttle'],
-        "breakaway bandit": ['Houdini', 'Hermit','Monk', 'Fugitive','Swashbuckler', 'Buttered Herring'],
-        "broom wagon botherer": ['Worm', 'Snail','Pensioner', 'Slug','Bus Queue', 'Dial-up Internet'],
-        "super domestique": ['Toaster', 'Kettle','Spatula', 'Tote Bag','Butler', 'Soap Dish'],
-        "captain of the road": ['Headteacher', 'Scoutmaster','Calculator', 'Filofax','Skipper', 'Boss'],
-    };
-    const nicknameOptions = categoryNicknames[cyclist]
+    // const categoryNicknames = {
+    //     "mountain goat": ['Eagle', 'Tornado','Concorde', 'Butterfly', 'Goat','Sherpa', 'Squirrel'],
+    //     "full gas sprinter": ['Volcano', 'Bomb','Boiling Pan', 'Combustion Engine','Dynamite', 'Throttle'],
+    //     "breakaway bandit": ['Houdini', 'Hermit','Monk', 'Fugitive','Swashbuckler', 'Buttered Herring'],
+    //     "broom wagon botherer": ['Worm', 'Snail','Pensioner', 'Slug','Bus Queue', 'Dial-up Internet'],
+    //     "super domestique": ['Toaster', 'Kettle','Spatula', 'Tote Bag','Butler', 'Soap Dish'],
+    //     "captain of the road": ['Headteacher', 'Scoutmaster','Calculator', 'Filofax','Skipper', 'Boss'],
+    // };
+    const nicknameOptions = categoryNicknames[cyclist];
+    console.log({ nicknameOptions })
     const nickname = nicknameOptions[Math.floor(Math.random()*nicknameOptions.length)]
     result.innerHTML = nickname + "<br>" + " of " + place;
-    // imageElem.src="https://img.bruzu.com/?bi=https://source.unsplash.com/27HiryxnHJk/500x500&bi.o=undefined&h=500&w=500&a.tp=textbox&a.ox=center&a.oy=center&a.x=250&a.y=250&a.w=503&a.h=122&a.t=" + nickname + " of " + place + "&a.ta=center&a.fs=60&a.lh=0.8&a.fw=700&a.ff=Space Grotesk&a.maxHeight=500"
+    resultText = `${nickname} of ${place}`;
 }
 
-resultBtn.addEventListener('click', getData);
 
-function showFinalImage() {
-    resultBlock.classList.add('hidden');
-    shareBlock.classList.remove('hidden');
-}
 
 function shareFacebook() {
     var fbButton = document.getElementById('fb-share-button');
@@ -73,14 +99,16 @@ function shareFacebook() {
             return false;
         });
     }
-    
-    
 };
+
 shareFacebook()
 
 function generateQR() {
-    const qrcode = new QRCode(document.getElementById('qrcode'), {
-        text: 'https://ksushana.github.io/aka/build/result.html',
+    const url = `https://ksushana.github.io/aka/build/result.html?${resultText}`;
+    console.log({ url })
+    // const qrcode = 
+    new QRCode(document.getElementById('qrcode'), {
+        text: url,
         width: 128,
         height: 128,
         colorDark : '#000',
@@ -88,7 +116,6 @@ function generateQR() {
         correctLevel : QRCode.CorrectLevel.H
     });
 }
-
 
 function generateImagePage() {
     resultBlock.classList.add('hidden');
@@ -100,7 +127,21 @@ function onGenerateBtnClick() {
     generateQR()
 }
 
-imageButton.addEventListener('click', onGenerateBtnClick, false);
+
+
+function init() {
+}
+
+if(randomize) {
+    nextBtn.addEventListener('click', switchToNextQuestion);
+    resultBtn.addEventListener('click', getData);
+    imageButton.addEventListener('click', onGenerateBtnClick, false);
+}
+
+const imageElem = document.querySelector('.image-share-block');
+if (imageElem === true ) {
+    imageElem.src="https://img.bruzu.com/?bi=https://source.unsplash.com/27HiryxnHJk/500x500&bi.o=undefined&h=500&w=500&a.tp=textbox&a.ox=center&a.oy=center&a.x=250&a.y=250&a.w=503&a.h=122&a.t=" + window.location.search.replace('?', '') + "&a.ta=center&a.fs=60&a.lh=0.8&a.fw=700&a.ff=Space Grotesk&a.maxHeight=500";
+}
 
 
 
