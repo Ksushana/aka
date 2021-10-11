@@ -143,6 +143,15 @@ if (imageElem) {
     //     link.setAttribute('name', 'shareaholic:image');
     //     link.content = document.location;
     //     document.getElementsByTagName('head')[0].appendChild("https://img.bruzu.com/?bi=https://source.unsplash.com/27HiryxnHJk/500x500&bi.o=undefined&h=500&w=500&a.tp=textbox&a.ox=center&a.oy=center&a.x=250&a.y=250&a.w=503&a.h=122&a.t=" + window.location.search.replace('?', '') + "&a.ta=center&a.fs=60&a.lh=0.8&a.fw=700&a.ff=Space Grotesk&a.maxHeight=500");
+    var metaTags=document.getElementsByTagName("meta");
+
+    var fbAppIdContent = "";
+    for (var i = 0; i < metaTags.length; i++) {
+        if (metaTags[i].getAttribute("property") == "og:image") {
+            fbAppIdContent = metaTags[i].setAttribute("content", "https://img.bruzu.com/?bi=https://source.unsplash.com/27HiryxnHJk/500x500&bi.o=undefined&h=500&w=500&a.tp=textbox&a.ox=center&a.oy=center&a.x=250&a.y=250&a.w=503&a.h=122&a.t=" + window.location.search.replace('?', '') + "&a.ta=center&a.fs=60&a.lh=0.8&a.fw=700&a.ff=Space Grotesk&a.maxHeight=500");
+            break;
+        }
+    }
     shareFacebook()
 }
 
