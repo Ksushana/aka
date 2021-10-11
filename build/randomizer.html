@@ -48,28 +48,44 @@
           </div>
         </form>
         <div class="block result hidden">
-          <canvas id="textCanvas" height="200"></canvas><img id="image">
           <p class="result__intro">congratulations. you are...</p>
-          <p class="result__result"> the butterfly of bermondsey</p>
-          <button class="result__button button" type="button">email yourself your nickname   </button>
+          <p class="result__result" id="contentToWrite1"> the butterfly of bermondsey</p>
+          <button class="result__button button" type="button" name="name">generate qr with your nickname   </button>
         </div>
         <div class="send-block hidden"> 
-          <div class="send-block__note title">send yourself an image of your nickname to share with friends</div>
-          <form action="">
-            <div class="radio-form"> 
-              <input class="radio-form__text-input input" type="email" name="place" id="place" placeholder="enter your email address">
-              <div class="radio-form__submit"> 
-                <button class="button button--submit button--disabled" type="submit">send            </button>
-              </div>
-            </div>
-          </form>
+          <div class="send-block__note title">scan the qr code with your nickname to share with friends</div>
+          <div id="qrcode"></div><a class="button send-block--finish" href="final.html">Finish            </a>
         </div>
-        <div class="radio-form__reset"> <a class="radio-form__reset-label" href="./question-1.html"> 
+        <div class="radio-form__reset"> <a class="radio-form__reset-label" onClick="window.location.reload()"> 
             <svg class="svg-icon svg-icon--restart">
               <use xlink:href="#restart"></use>
             </svg></a></div>
         <div class="created"> 
           <p>created by conductor</p>
+        </div>
+        <div class="main-page loading">
+          <header class="header--black header">
+            <div class="header__logo">
+              <svg class="svg-icon svg-icon--logo">
+                <use xlink:href="#logo"></use>
+              </svg>
+            </div>
+            <p class="header__text">
+               please wait.... <br>
+              We are digging deep into the archives for your legendary cycling nickname
+            </p>
+          </header>
+          <div class="container">
+            <div class="main-page"> 
+              <div class="big-letters big-letters--loading">
+                <div class="big-letters__row big-letters__row--small"> <span>king</span><span>watchmaker </span></div>
+                <div class="big-letters__row big-letters__row--small"><span>fast train</span><span>eagle </span></div>
+                <div class="big-letters__row big-letters__row--small"><span>little prince </span></div>
+                <div class="big-letters__row big-letters__row--small"><span>lion</span><span>angel of the mo </span></div>
+              </div>
+              <div class="banner"> <span>Conductor to supply intro animation</span></div>
+            </div>
+          </div>
         </div>
       </div>
     </main><svg width="0" height="0" class="hidden">
@@ -84,4 +100,5 @@
   </symbol>
 </svg>
   <script src="js/bundle.min.js"></script></body>
+  <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
 </html>

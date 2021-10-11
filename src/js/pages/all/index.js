@@ -13,6 +13,7 @@ function switchToNextQuestion() {
     firstQuestion.classList.add('hidden');
     secondQuestion.classList.remove('hidden');
 }
+
 nextBtn.addEventListener('click', switchToNextQuestion);
 
 // const getPeopleRecords = () =>
@@ -85,7 +86,7 @@ function generateQR() {
         colorDark : '#000',
         colorLight : '#fff',
         correctLevel : QRCode.CorrectLevel.H
-      });
+    });
 }
 
 
