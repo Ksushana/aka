@@ -1,21 +1,32 @@
+const intro = document.querySelector('.intro');
+const showForm = document.querySelector('.main-page__button');
+
 const nextBtn = document.querySelector('.radio-form__submit--1');
 const resultBtn = document.querySelector('.radio-form__submit--2');
 const firstQuestion = document.querySelector('.question-1');
 const secondQuestion = document.querySelector('.question-2');
+
 const resultBlock = document.querySelector('.result');
-const ImageBlock = document.querySelector('.send-block');
+const QRBlock = document.querySelector('.send-block');
 const imageButton = document.querySelector('.result__button');
 const result = document.querySelector('.result__result');
 const loadingBlock = document.querySelector('.loading');
-// const shareBlock = document.querySelector('.image-share-block');
 const randomize = document.querySelector('.randomize');
+
+const finalBlock = document.querySelector('.final'); 
+const showFinalBlockBtn = document.querySelector('.send-block--finish'); 
+
+
+function switchToForm(evt) {
+    evt.preventDefault()
+    intro.classList.add('intro--is-hidden');
+    document.body.style.backgroundColor = "#ffffff";
+}
 
 function switchToNextQuestion() {
     firstQuestion.classList.add('hidden');
     secondQuestion.classList.remove('hidden');
 }
-
-
 
 function fetchNicknamesPage(offset) {
     return fetch(`https://api.airtable.com/v0/appcM5XpJx4Ghrw0r/tblVm2XRmKONfU09o?api_key=keyIiN3plrMmK76py&offset=${offset || ''}`)
@@ -91,12 +102,19 @@ function generateQR() {
     // const qrcode = 
     new QRCode(document.getElementById('qrcode'), {
         text: url,
-        width: 128,
-        height: 128,
+        width: 200,
+        height: 200,
         colorDark : '#000',
         colorLight : '#fff',
         correctLevel : QRCode.CorrectLevel.H
     });
+}
+
+function switchToThankYouPage(evt) {
+    evt.preventDefault()
+    finalBlock.classList.add('final--is-shown');
+    document.body.style.backgroundColor = "#000000";
+    QRBlock.classList.add('hidden');
 }
 
 function shareFacebook() {
@@ -117,7 +135,7 @@ function shareFacebook() {
 
 function generateImagePage() {
     resultBlock.classList.add('hidden');
-    ImageBlock.classList.remove('hidden');
+    QRBlock.classList.remove('hidden');
 }
 
 function onGenerateBtnClick() {
@@ -134,11 +152,42 @@ if(randomize) {
     nextBtn.addEventListener('click', switchToNextQuestion);
     resultBtn.addEventListener('click', getData);
     imageButton.addEventListener('click', onGenerateBtnClick, false);
+    showForm.addEventListener('click', switchToForm);
+    showFinalBlockBtn.addEventListener('click', switchToThankYouPage);
 }
 
 const imageElem = document.querySelector('.image-share-block img');
 if (imageElem) {
-    imageElem.src="https://img.bruzu.com/?bi=https://source.unsplash.com/27HiryxnHJk/500x500&bi.o=undefined&h=500&w=500&a.tp=textbox&a.ox=center&a.oy=center&a.x=250&a.y=250&a.w=503&a.h=122&a.t=" + window.location.search.replace('?', '') + "&a.ta=center&a.fs=60&a.lh=0.8&a.fw=700&a.ff=Space Grotesk&a.maxHeight=500";
+    let API_KEY = "gBJaRhHJopWYoot26LfWQgtt";
+    var data = {
+        "template": "yKBqAzZ9q10ZvMx36O",
+        "modifications": [
+          {
+            "name": "message",
+            "text": window.location.search.replace('?', ''),
+            "color": null,
+            "background": null
+          }
+        ],
+        "webhook_url": null,
+        "transparent": false,
+        "metadata": null
+      }
+      fetch('https://api.bannerbear.com/v2/images', {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+          'Content-Type' : 'application/json',
+          'Authorization' : `Bearer ${API_KEY}`
+        }
+      })
+        .then(response => response.json())
+        .then(json => {
+            console.log({ json });
+            console.log(json.image_url_png);
+        });
+    //   console.log(data)
+    // imageElem.src=data;
     var metaTags=document.getElementsByTagName("meta");
 
     var fbAppIdContent = "";

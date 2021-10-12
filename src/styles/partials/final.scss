@@ -1,9 +1,32 @@
 .final {
+    position: fixed;
+    opacity: 0;
+    pointer-events: none;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: $color-black;
+    color: $color-white;
+    transition: opacity 0.5s;
+    display: flex;
+    flex-direction: column;
+    &--is-shown {
+      opacity: 1;
+      pointer-events: initial;
+    }
     &__text {
         font-size: size(132px);
         line-height: size(158px);
         color: #FFFFFF;
         text-align: center;
-        margin: 0 0 size(90px);
+        margin: auto 0;
+        @media  (max-width:$mobile-width) {
+            font-size: 60px;
+        line-height: 110%;
+        }
+    }
+    .container {
+        flex-grow: 1;
     }
 }

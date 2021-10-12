@@ -7,7 +7,17 @@ block body
   +header("standart")
   main 
     .container.randomize
-        
+        .intro
+            +header("main")
+            .container
+                .main-page 
+                    .big-letters 
+                        .big-letters__row.big-letters__row--1 the 
+                        .big-letters__row.big-letters__row--2 eagle 
+                        .big-letters__row.big-letters__row--3 of 
+                        .big-letters__row.big-letters__row--4 toledo 
+                    a.button.button--white.main-page__button(href="./randomizer.html") let’s begin
+                    +banner
         form(action="")
             .block.question-1
                 h2.title what type of cyclist are you?
@@ -30,7 +40,7 @@ block body
                 h2.title please name a favourite place
                 .radio-form 
                     input.radio-form__text-input.input(type="text" name="place" id="place" placeholder="enter the city, town, village or place that means something to you")
-                    p.radio-form__note psst... try and keep it under 20 characters in length
+                    p.radio-form__note psst... try and keep it under 12 characters in length
                     .radio-form__submit 
                         button.button.button--submit.button--disabled.radio-form__submit--2(type="submit") next
         .block.result.hidden
@@ -40,19 +50,10 @@ block body
         .send-block.hidden 
             .send-block__note.title scan the qr code with your nickname to share with friends
             #qrcode
-            a.button.send-block--finish( href="final.html") Finish            
+            button.button.send-block--finish( type="button") Finish            
         .radio-form__reset 
             a.radio-form__reset-label( onClick="window.location.reload()") 
                 +svg-icon("restart")
-        //- .image-share-block.hidden
-        //-     img#image(src="")
-        //-     .image-share-block__share 
-        //-       .image-share-block__facebook
-        //-         #fb-share-button
-        //-             svg(viewBox="0 0 12 12" preserveAspectRatio="xMidYMid meet")
-        //-                 path(class="svg-icon-path" d="M9.1,0.1V2H8C7.6,2,7.3,2.1,7.1,2.3C7,2.4,6.9,2.7,6.9,3v1.4H9L8.8,6.5H6.9V12H4.7V6.5H2.9V4.4h1.8V2.8 c0-0.9,0.3-1.6,0.7-2.1C6,0.2,6.6,0,7.5,0C8.2,0,8.7,0,9.1,0.1z" )
-        //-             span Share
-        //-       .image-share-block__instagram
         .created 
           p created by conductor
         .main-page.loading
@@ -72,4 +73,9 @@ block body
                             span lion
                             span angel of the mo 
                     +banner
-        
+        .final 
+            +header("loading")
+            .container
+                .main-page 
+                    .final__text great, thanks.
+                    a.button.button--white.main-page__button(href="./index.html") generate another nickname

@@ -3,13 +3,16 @@
     align-items: center;
     flex-direction: column;
     padding-top: size(40px);
+    @media  (max-width:$mobile-width) {
+        padding-top: 20px;
+    }
     &__logo {
         width: size(94px);
         height: size(70px);
         display: flex;
-        @media  (max-width:540px) {
-            width: 94px;
-            height: 70px;
+        @media  (max-width:$mobile-width) {
+            width: 70px;
+            height: 50px;
         }
         
         svg {
@@ -25,6 +28,10 @@
         line-height: size(20px);
         text-align: center;
         margin: 16px 0 0;
+        @media  (max-width:$mobile-width) {
+            font-size: 20px;
+            line-height: 16px;
+        }
     }
 
     &--black {

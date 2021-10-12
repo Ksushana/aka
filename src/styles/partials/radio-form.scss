@@ -1,8 +1,9 @@
 .radio-form {
-    
+    max-width: 1114px;
+    margin: 0 auto;
     display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: space-between;
 
     &__submit {
         width: 100%;
@@ -17,6 +18,11 @@
     &__label {
         margin-bottom: size(30px);
         transition: background-color $transition-duration, color $transition-duration;
+        cursor: pointer;
+        @media  (max-width:$mobile-width) {
+            width: 100%;
+            margin-bottom: 20px;
+        }
     }
     &__input {
         display: none;
@@ -46,6 +52,10 @@
         position: absolute;
         right: size(40px);
         bottom: size(48px);
+        @media  (max-width:$mobile-width) {
+            right: 20px;
+            bottom: 65px;
+        }
         
     }
     &__reset-input {

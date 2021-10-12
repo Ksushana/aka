@@ -15,4 +15,36 @@
     text-align: center;
     margin: 0 auto;
     outline: none;
+    @media  (max-width:$mobile-width) {
+        font-size: 14px;
+        line-height: 44px;
+        &::placeholder {
+            font-size: 14px;
+            line-height: 44px;
+            text-align:center;
+        }
+        &::-webkit-input-placeholder {
+            text-align:center;
+            font-size: 14px;
+            line-height: 44px;
+        }
+        
+        &:-moz-placeholder { /* Firefox 18- */
+            text-align:center;
+            font-size: 14px;
+            line-height: 44px;  
+        }
+        
+        &::-moz-placeholder {  /* Firefox 19+ */
+            text-align:center;
+            font-size: 14px;
+            line-height: 44px;  
+        }
+        
+        &:-ms-input-placeholder {  
+            text-align:center;
+            font-size: 14px;
+            line-height: 44px; 
+        }
+    }
 }

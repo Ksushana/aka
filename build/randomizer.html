@@ -20,6 +20,31 @@
     </header>
     <main> 
       <div class="container randomize">
+        <div class="intro">
+          <header class="header--black header">
+            <div class="header__logo">
+              <svg class="svg-icon svg-icon--logo">
+                <use xlink:href="#logo"></use>
+              </svg>
+            </div>
+            <p class="header__text">
+               created by conductor <br>
+              a design agency dedicated to cycling <br>
+              aka.conductorstudio.com
+            </p>
+          </header>
+          <div class="container">
+            <div class="main-page"> 
+              <div class="big-letters"> 
+                <div class="big-letters__row big-letters__row--1">the </div>
+                <div class="big-letters__row big-letters__row--2">eagle </div>
+                <div class="big-letters__row big-letters__row--3">of </div>
+                <div class="big-letters__row big-letters__row--4">toledo </div>
+              </div><a class="button button--white main-page__button" href="./randomizer.html">let’s begin</a>
+              <div class="banner"> <span>Conductor to supply intro animation</span></div>
+            </div>
+          </div>
+        </div>
         <form action="">
           <div class="block question-1">
             <h2 class="title">what type of cyclist are you?</h2>
@@ -45,7 +70,7 @@
             <h2 class="title">please name a favourite place</h2>
             <div class="radio-form"> 
               <input class="radio-form__text-input input" type="text" name="place" id="place" placeholder="enter the city, town, village or place that means something to you">
-              <p class="radio-form__note">psst... try and keep it under 20 characters in length</p>
+              <p class="radio-form__note">psst... try and keep it under 12 characters in length</p>
               <div class="radio-form__submit"> 
                 <button class="button button--submit button--disabled radio-form__submit--2" type="submit">next</button>
               </div>
@@ -59,7 +84,8 @@
         </div>
         <div class="send-block hidden"> 
           <div class="send-block__note title">scan the qr code with your nickname to share with friends</div>
-          <div id="qrcode"></div><a class="button send-block--finish" href="final.html">Finish            </a>
+          <div id="qrcode"></div>
+          <button class="button send-block--finish" type="button">Finish            </button>
         </div>
         <div class="radio-form__reset"> <a class="radio-form__reset-label" onClick="window.location.reload()"> 
             <svg class="svg-icon svg-icon--restart">
@@ -89,6 +115,24 @@
                 <div class="big-letters__row big-letters__row--small"><span>lion</span><span>angel of the mo </span></div>
               </div>
               <div class="banner"> <span>Conductor to supply intro animation</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="final"> 
+          <header class="header--black header">
+            <div class="header__logo">
+              <svg class="svg-icon svg-icon--logo">
+                <use xlink:href="#logo"></use>
+              </svg>
+            </div>
+            <p class="header__text">
+               please wait.... <br>
+              We are digging deep into the archives for your legendary cycling nickname
+            </p>
+          </header>
+          <div class="container">
+            <div class="main-page"> 
+              <div class="final__text">great, thanks.</div><a class="button button--white main-page__button" href="./index.html">generate another nickname</a>
             </div>
           </div>
         </div>

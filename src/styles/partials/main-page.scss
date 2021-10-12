@@ -3,7 +3,12 @@
     flex-direction: column;
     justify-content: space-between;
     flex-grow: 1;
+    
     &__button {
         margin: auto;
+        @media  (max-width:$mobile-width) {
+            margin: auto 20px 80px;
+            width: calc(100% - 40px);
+        }
     }
 }
