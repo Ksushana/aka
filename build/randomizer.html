@@ -80,10 +80,11 @@
         <div class="block result hidden">
           <p class="result__intro">congratulations. you are...</p>
           <p class="result__result" id="contentToWrite1"> the butterfly of bermondsey</p>
-          <button class="result__button button" type="button" name="name">generate qr with your nickname   </button>
+          <button class="result__button button" type="button" name="name"> <span class="result__button--desktop">generate qr with your nickname  </span><span class="result__button--mobile">generate link with your nickname  </span></button>
         </div>
         <div class="send-block hidden"> 
-          <div class="send-block__note title">scan the qr code with your nickname to share with friends</div>
+          <div class="send-block__note send-block__note--desktop title">scan the qr code with your nickname to share with friends</div>
+          <div class="send-block__note send-block__note--mobile title">follow the link with your nickname to share with friends</div><a class="send-block__link" href="">tap here</a>
           <div id="qrcode"></div>
           <button class="button send-block--finish" type="button">Finish            </button>
         </div>
