@@ -159,36 +159,6 @@ if(randomize) {
 const imageElem = document.querySelector('.image-share-block img');
 if (imageElem) {
     imageElem.src="https://img.bruzu.com/?bi=https://source.unsplash.com/27HiryxnHJk/500x500&bi.o=undefined&h=500&w=500&a.tp=textbox&a.ox=center&a.oy=center&a.x=250&a.y=250&a.w=503&a.h=122&a.t=" + window.location.search.replace('?', '') + "&a.ta=center&a.fs=60&a.lh=0.8&a.fw=700&a.ff=Space Grotesk&a.maxHeight=500";
-    // let API_KEY = "gBJaRhHJopWYoot26LfWQgtt";
-    // var data = {
-    //     "template": "yKBqAzZ9q10ZvMx36O",
-    //     "modifications": [
-    //       {
-    //         "name": "message",
-    //         "text": window.location.search.replace('?', ''),
-    //         "color": null,
-    //         "background": null
-    //       }
-    //     ],
-    //     "webhook_url": null,
-    //     "transparent": false,
-    //     "metadata": null
-    //   }
-    //   fetch('https://api.bannerbear.com/v2/images', {
-    //     method: 'POST',
-    //     body: JSON.stringify(data),
-    //     headers: {
-    //       'Content-Type' : 'application/json',
-    //       'Authorization' : `Bearer ${API_KEY}`
-    //     }
-    //   })
-    //     .then(response => response.json())
-    //     .then(json => {
-    //         console.log({ json });
-    //         console.log(json.image_url_png);
-    //     });
-    //   console.log(data)
-    // imageElem.src=data;
     var metaTags=document.getElementsByTagName("meta");
 
     var fbAppIdContent = "";
