@@ -10,6 +10,13 @@
         width: size(94px);
         height: size(70px);
         display: flex;
+        &--white {
+            color: $color-black;
+            text-transform: uppercase;
+            svg {
+                color: $color-black;
+            }
+        }
         @media  (max-width:$mobile-width) {
             width: 70px;
             height: 50px;
@@ -42,11 +49,5 @@
             color: $color-white;
         }
     }
-    &--white {
-        color: $color-black;
-        text-transform: uppercase;
-        svg {
-            color: $color-black;
-        }
-    }
+    
 }
