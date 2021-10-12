@@ -19,6 +19,7 @@
         font-size: size(162px);
         line-height: size(114px);
         margin: 0 0 size(70px);
+        
         @media  (max-width:$mobile-width) {
             font-size: 60px;
             line-height: 80%;
@@ -28,5 +29,16 @@
     &__button {
         margin: 0 auto;
         background-color: transparent;
+        &--mobile {
+            display: none;
+        }
+        @media  (max-width:$mobile-width) {
+            &--mobile {
+                display: block;
+            }
+            &--desktop {
+                display: none;
+            }
+        }
     }
 }

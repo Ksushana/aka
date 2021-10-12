@@ -105,9 +105,11 @@ function generateQR() {
         width: 200,
         height: 200,
         colorDark : '#000',
-        colorLight : '#fff',
+        colorLight : '#fff', 
         correctLevel : QRCode.CorrectLevel.H
     });
+    const link = document.querySelector('.send-block__link');
+    link.setAttribute("href", url);
 }
 
 function switchToThankYouPage(evt) {

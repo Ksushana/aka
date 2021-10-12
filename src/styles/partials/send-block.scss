@@ -6,7 +6,7 @@
         line-height: size(40px);
         margin-top: size(50px);
         margin-bottom: size(50px);
-        @media  (max-width:$mobile-width) {
+        &--mobile {
             margin-bottom: 30px;
             margin-top: 30px;
             font-size: 30px;
@@ -20,11 +20,12 @@
         margin: 30px auto;
         width: fit-content;
         @media  (max-width:$mobile-width) {
-            img {
-                width: 160px;
-                height: 160px;
-                object-fit: contain;
-            }
+            display: none;
+            // img {
+            //     width: 160px;
+            //     height: 160px;
+            //     object-fit: contain;
+            // }
         }
     }
     &--finish {
@@ -32,7 +33,29 @@
         background-color: transparent;
         @media  (max-width:$mobile-width) {
             width: calc(100% - 40px);
-            
+
+        }
+    }
+    &__note {
+        &--mobile {
+            display: none;
+        }
+        @media  (max-width:$mobile-width) {
+            &--mobile {
+                display: block;
+            }
+            &--desktop {
+                display: none;
+            }
+        }
+    }
+
+    &__link {
+        display: none;
+        @media  (max-width:$mobile-width) {
+            display: block;
+            margin: 0 auto;
+            color: $color-black;
         }
     }
 }

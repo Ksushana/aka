@@ -46,9 +46,13 @@ block body
         .block.result.hidden
             p.result__intro congratulations. you are...
             p#contentToWrite1.result__result  the butterfly of bermondsey
-            button.result__button.button(type="button" name="name" ) generate qr with your nickname   
+            button.result__button.button(type="button" name="name" ) 
+              span.result__button--desktop generate qr with your nickname  
+              span.result__button--mobile generate link with your nickname  
         .send-block.hidden 
-            .send-block__note.title scan the qr code with your nickname to share with friends
+            .send-block__note.send-block__note--desktop.title scan the qr code with your nickname to share with friends
+            .send-block__note.send-block__note--mobile.title follow the link with your nickname to share with friends
+            a.send-block__link(href="") tap here
             #qrcode
             button.button.send-block--finish( type="button") Finish            
         .radio-form__reset 
