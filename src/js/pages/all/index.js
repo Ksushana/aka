@@ -31,8 +31,10 @@ function switchToNextQuestion() {
 function fetchNicknamesPage(offset) {
     return fetch(`https://api.airtable.com/v0/appcM5XpJx4Ghrw0r/tblVm2XRmKONfU09o?api_key=keyIiN3plrMmK76py&offset=${offset || ''}`)
         .then(response => response.json())
-        .then(json => json);
+        .then(json => json)
+        ;
 }
+
 
 const airtableRecords = [];
 const airtablePerPage = 100;
@@ -42,6 +44,7 @@ function getAirtableRecords(offset) {
             const { records } = page;
             airtableRecords.push(...records);
             if (records.length === airtablePerPage) {
+                
                 getAirtableRecords(page.offset);
             }
         });
@@ -56,12 +59,16 @@ function getNicknameOptions() {
                 const name = record.fields['Name'];
                 if (!categoryNicknames[category]) {
                     categoryNicknames[category] = [];
+                    
                 }
                 categoryNicknames[category].push(name);
+                console.log(name)
             }) 
-        });
+        })
 }
+
 getNicknameOptions();
+
 
 function showLoadingBlock() {
     loadingBlock.classList.add('loading--is-shown');
@@ -78,16 +85,8 @@ function getData(evt) {
         secondQuestion.classList.add('hidden');
         resultBlock.classList.remove('hidden');
      }, 2000);
-    const cyclist = document.getElementsByName('cyclist')[0].value;
+    const cyclist = document.querySelector('input[name="cyclist"]:checked').value;
     const place = document.getElementsByName('place')[0].value;
-    // const categoryNicknames = {
-    //     "mountain goat": ['Eagle', 'Tornado','Concorde', 'Butterfly', 'Goat','Sherpa', 'Squirrel'],
-    //     "full gas sprinter": ['Volcano', 'Bomb','Boiling Pan', 'Combustion Engine','Dynamite', 'Throttle'],
-    //     "breakaway bandit": ['Houdini', 'Hermit','Monk', 'Fugitive','Swashbuckler', 'Buttered Herring'],
-    //     "broom wagon botherer": ['Worm', 'Snail','Pensioner', 'Slug','Bus Queue', 'Dial-up Internet'],
-    //     "super domestique": ['Toaster', 'Kettle','Spatula', 'Tote Bag','Butler', 'Soap Dish'],
-    //     "captain of the road": ['Headteacher', 'Scoutmaster','Calculator', 'Filofax','Skipper', 'Boss'],
-    // };
     const nicknameOptions = categoryNicknames[cyclist];
     console.log({ nicknameOptions })
     const nickname = nicknameOptions[Math.floor(Math.random()*nicknameOptions.length)]

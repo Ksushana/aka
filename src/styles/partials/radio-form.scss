@@ -19,6 +19,7 @@
         margin-bottom: size(30px);
         transition: background-color $transition-duration, color $transition-duration;
         cursor: pointer;
+        white-space: nowrap;
         @media  (max-width:$mobile-width) {
             width: 100%;
             margin-bottom: 20px;
