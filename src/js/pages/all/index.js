@@ -123,13 +123,30 @@ function shareFacebook() {
     if (fbButton) {
         var url = window.location.href;
         
-        fbButton.addEventListener('click', function() {
-            window.open('https://www.facebook.com/sharer/sharer.php?u=' + url,
-                'facebook-share-dialog',
-                'width=800,height=600'
-            );
-            return false;
-        });
+        // fbButton.addEventListener('click', function() {
+        //     window.open('https://www.facebook.com/sharer/sharer.php?u=' + url,
+        //         'facebook-share-dialog',
+        //         'width=800,height=600'
+        //     );
+        //     return false;
+        // });
+
+        
+        const shareData = {
+            title: 'Cycling Nickname',
+            text: 'Check my Cycling Nickname',
+            url: 'https://www.facebook.com/sharer/sharer.php?u=' + url
+          }
+        
+          const btn = document.getElementById('fb-share-button');
+        
+          btn.addEventListener('click',  () => {
+            try {
+            //   await 
+              navigator.share(shareData)
+            } catch(err) {
+            }
+          });
     }
 };
 
