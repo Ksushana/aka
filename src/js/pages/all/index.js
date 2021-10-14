@@ -167,7 +167,7 @@ if(randomize) {
 
 const resultItem = document.querySelector('.image-share-block__nickname');
 if (resultItem) {
-    resultItem.innerHTML = window.location.search.replace('?', '' ).replace("%20", " ");
+    resultItem.innerHTML = window.location.search.replace('?', '' ).replaceAll("%20", " ");
     var metaTags=document.getElementsByTagName("meta");
 
     var fbAppIdContent = "";
