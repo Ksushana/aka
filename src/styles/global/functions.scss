@@ -1,3 +1,8 @@
 @function size($size-in-px) {
   @return $size-in-px / $font-base * 1rem;
 }
+
+@function size-vh($size, $container-height) {
+  @return $size / $container-height * 100vh;
+}
+

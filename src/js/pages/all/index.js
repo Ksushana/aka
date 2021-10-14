@@ -90,8 +90,8 @@ function getData(evt) {
     const nicknameOptions = categoryNicknames[cyclist];
     console.log({ nicknameOptions })
     const nickname = nicknameOptions[Math.floor(Math.random()*nicknameOptions.length)]
-    result.innerHTML = nickname + "<br>" + " of " + place;
-    resultText = `${nickname} of ${place}`;
+    result.innerHTML = "The " + nickname + "<br>" + " of " + place;
+    resultText = `The ${nickname} of ${place}`;
 }
 
 
@@ -122,16 +122,7 @@ function shareFacebook() {
     var fbButton = document.getElementById('fb-share-button');
     if (fbButton) {
         var url = window.location.href;
-        
-        // fbButton.addEventListener('click', function() {
-        //     window.open('https://www.facebook.com/sharer/sharer.php?u=' + url,
-        //         'facebook-share-dialog',
-        //         'width=800,height=600'
-        //     );
-        //     return false;
-        // });
 
-        
         const shareData = {
             title: 'Cycling Nickname',
             text: 'Check my Cycling Nickname',
@@ -174,9 +165,9 @@ if(randomize) {
     showFinalBlockBtn.addEventListener('click', switchToThankYouPage);
 }
 
-const imageElem = document.querySelector('.image-share-block img');
-if (imageElem) {
-    imageElem.src="https://img.bruzu.com/?bi=https://source.unsplash.com/27HiryxnHJk/500x500&bi.o=undefined&h=500&w=500&a.tp=textbox&a.ox=center&a.oy=center&a.x=250&a.y=250&a.w=503&a.h=122&a.t=" + window.location.search.replace('?', '') + "&a.ta=center&a.fs=60&a.lh=0.8&a.fw=700&a.ff=Space Grotesk&a.maxHeight=500";
+const resultItem = document.querySelector('.image-share-block__nickname');
+if (resultItem) {
+    resultItem.innerHTML = window.location.search.replace('?', '');
     var metaTags=document.getElementsByTagName("meta");
 
     var fbAppIdContent = "";

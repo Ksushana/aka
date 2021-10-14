@@ -5,11 +5,14 @@ block globalVars
   - var currentPageColor = "white"
 
 block body
-  +header("standart")
   main 
     .container
         .image-share-block
-            img#image(src="")
+            .image-share-block__note i am...
+            .image-share-block__nickname the eel of herne bay
+            .image-share-block__logo
+              +svg-icon("logo")
+            .image-share-block__text created by conductor<br> a design agency dedicated to cycling<br> aka.conductorstudio.com
             .image-share-block__share 
               .image-share-block__facebook
                 #fb-share-button.button

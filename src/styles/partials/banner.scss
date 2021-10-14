@@ -1,14 +1,14 @@
 .banner {
-    width: size(140px);
-    padding: size(6px) size(14px);
+    width: size-vh(140px, 768px);
+    padding: size-vh(6px, 768px) size-vh(14px, 768px);
     font-weight: 600;
-    font-size: size(13px);
-    line-height: size(10px);
+    font-size: size-vh(13px, 768px);
+    line-height: size-vh(10px, 768px);
     text-align: center;
     text-transform: uppercase;
     color: #FFFFFF;
     position: absolute;
-    left: size(23px);
-    bottom: size(15px);
+    left: size-vh(23px, 768px);
+    bottom: size-vh(15px, 768px);
     border: 1px solid #FFFFFF;
 }

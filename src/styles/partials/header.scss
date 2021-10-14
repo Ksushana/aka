@@ -2,24 +2,17 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding-top: size(40px);
+    padding-top: size-vh(40px, 768px);
     @media  (max-width:$mobile-width) {
-        padding-top: 20px;
+        padding-top: size-vh(20px, 375px);
     }
     &__logo {
-        width: size(94px);
-        height: size(70px);
+        width: size-vh(94px, 768px);
+        height: size-vh(70px, 768px);
         display: flex;
-        &--white {
-            color: $color-white;
-            text-transform: uppercase;
-            svg {
-                color: $color-white;
-            }
-        }
         @media  (max-width:$mobile-width) {
-            width: 70px;
-            height: 50px;
+            width: size-vh(50px, 375px);
+            height: size-vh(30px, 375px);
         }
         
         svg {
@@ -31,14 +24,14 @@
     }
     &__text {
         font-weight: 600;
-        font-size: size(25px);
-        line-height: size(20px);
+        font-size: size-vh(25px, 768px);
+        line-height: size-vh(20px, 768px);
         text-align: center;
-        margin: 16px 0 0;
-        padding: 0 20px;
+        margin: size-vh(26px, 768px) 0 0;
+        padding: 0 size-vh(20px, 768px);
         @media  (max-width:$mobile-width) {
-            font-size: 20px;
-            line-height: 16px;
+            font-size: size-vh(12px, 375px);
+            line-height: size-vh(10px, 375px);
         }
     }
 

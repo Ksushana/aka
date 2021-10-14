@@ -4,14 +4,45 @@
 }
 
 .image-share-block {
+    padding: 0 20px;
     display: flex;
     flex-direction: column;
-    
-    img {
-        width: 90%;
-        margin: 30px auto;
-        max-width: 500px;
+    margin-top: size-vh(69px, 1080px);
+    &__note {
+        font-weight: 600;
+        font-size: size-vh(70px, 1080px);
+        line-height: size-vh(70px, 1080px);
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: size-vh(62px, 1080px);
     }
+    &__nickname {
+        font-weight: 600;
+        font-size: size-vh(120px, 1080px);
+        line-height: size-vh(100px, 1080px);
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: size-vh(83px, 1080px);
+        
+    }
+    &__logo {
+        margin-bottom: size-vh(28px, 1080px);
+        text-align: center;
+        svg {
+            width: size-vh(92px, 1080px);
+            height: size-vh(69px, 1080px);
+        }
+    }
+
+    &__text {
+        font-weight: 600;
+        font-size: size-vh(40px, 1080px);
+        line-height: size-vh(33px, 1080px);
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: size-vh(80px, 1080px);
+    }
+    
     &__share {
         margin: 0 auto;
         width: 100%;

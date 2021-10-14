@@ -5,9 +5,9 @@
     flex-grow: 1;
     
     &__button {
-        margin: auto;
+        margin: size-vh(20px, 768px) auto size-vh(20px, 768px);
         @media  (max-width:$mobile-width) {
-            margin: auto 20px 80px;
+            margin: auto auto size-vh(40px, 375px);
             width: calc(100% - 40px);
         }
     }

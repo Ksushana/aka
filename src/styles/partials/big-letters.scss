@@ -1,28 +1,29 @@
 .big-letters {
-    font-weight: 600;
-    font-size: size(180px);
+    
     color: #ffffff;
     text-transform: uppercase;
     @media  (max-width:$mobile-width) {
-        font-size: 80px;
+        
         margin: auto 0;
     }
     &__row {
         white-space: nowrap;
-        line-height: size(120px);
+        line-height: size-vh(120px, 768px);
+        font-weight: 600;
+        font-size: size-vh(180px, 768px);
         display: flex;
         justify-content: space-between;
         @media  (max-width:$mobile-width) {
+            font-size: size-vh(60px, 375px);
             line-height: 80%;
         }
         &--small {
-            line-height: size(120px);
+            line-height: size-vh(100px, 768px);
             display: flex;
             justify-content: space-between;
-            font-size: size(132px);
-            line-height: size(100px);
+            font-size: size-vh(132px, 768px);
             @media  (max-width:$mobile-width) {
-                font-size: 60px;
+                font-size: size-vh(70px, 375px);
                 line-height: 80%;
             }
         }
@@ -40,7 +41,11 @@
         }
     }
     &--loading {
-        margin-bottom: size(82px);
-        margin-top: size(72px);
+        margin-bottom: size-vh(82px, 768px);
+        margin-top: size-vh(72px, 768px);
+        @media  (max-width:$mobile-width) {
+            margin-bottom: size-vh(20px, 375px);
+            margin-top: size-vh(20px, 375px);
+        }
     }
 }
