@@ -8,9 +8,9 @@
     }
     &__row {
         white-space: nowrap;
-        line-height: size-vh(120px, 768px);
+        line-height: size-vh(100px, 768px);
         font-weight: 600;
-        font-size: size-vh(180px, 768px);
+        font-size: size-vh(160px, 768px);
         display: flex;
         justify-content: space-between;
         @media  (max-width:$mobile-width) {
@@ -18,10 +18,10 @@
             line-height: 80%;
         }
         &--small {
-            line-height: size-vh(100px, 768px);
+            line-height: size-vh(90px, 768px);
             display: flex;
             justify-content: space-between;
-            font-size: size-vh(132px, 768px);
+            font-size: size-vh(120px, 768px);
             @media  (max-width:$mobile-width) {
                 font-size: size-vh(70px, 375px);
                 line-height: 80%;
