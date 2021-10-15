@@ -165,9 +165,9 @@ if(randomize) {
     showFinalBlockBtn.addEventListener('click', switchToThankYouPage);
 }
 
-const resultItem = document.querySelector('.image-share-block__nickname');
-if (resultItem) {
-    resultItem.innerHTML = window.location.search.replace('?', '' ).replaceAll("%20", " ");
+const imageElem = document.querySelector('.image-share-block img');
+if (imageElem) {
+    imageElem.src="https://img.bruzu.com/?bi=https://ucarecdn.com/8aeee6e6-1eea-4575-a6fb-7f3a53055868/&bi.o=undefined&h=1080&w=1080&c.tp=textbox&c.ox=center&c.oy=center&c.x=540&c.y=517&c.w=860&c.h=293&c.t=" + window.location.search.replace('?', '') + "&c.ta=center&c.fs=120&c.lh=1&c.fw=700&c.ff=Roboto Condensed&c.maxHeight=488";
     var metaTags=document.getElementsByTagName("meta");
 
     var fbAppIdContent = "";
