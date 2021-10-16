@@ -8,9 +8,9 @@
     }
     &__row {
         white-space: nowrap;
-        line-height: size-vh(100px, 768px);
+        line-height: size-vh(110px, 768px);
         font-weight: 600;
-        font-size: size-vh(160px, 768px);
+        font-size: size-vh(150px, 768px);
         display: flex;
         justify-content: space-between;
         @media  (max-width:$mobile-width) {
