@@ -126,7 +126,7 @@ function shareFacebook() {
         const shareData = {
             title: 'Cycling Nickname',
             text: 'Check my Cycling Nickname',
-            url: 'https://www.facebook.com/sharer/sharer.php?u=' + url
+            url: 'https://www.facebook.com/sharer/sharer.php?u=' + imageElem.src
           }
         
           const btn = document.getElementById('fb-share-button');
