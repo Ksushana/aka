@@ -11,11 +11,8 @@ block body
             +header("main")
             .container
                 .main-page 
-                    .big-letters 
-                        .big-letters__row.big-letters__row--1 the 
-                        .big-letters__row.big-letters__row--2 eagle 
-                        .big-letters__row.big-letters__row--3 of 
-                        .big-letters__row.big-letters__row--4 toledo 
+                    video.main-page__video(width="100%" autoplay loop) 
+                      source(src="./images/AKA-Web-Intro.mp4" type="video/mp4") 
                     a.button.button--white.main-page__button(href="./randomizer.html") let’s begin
                     +banner
         form(action="")
@@ -64,18 +61,8 @@ block body
             +header("loading")
             .container
                 .main-page 
-                    .big-letters.big-letters--loading
-                        .big-letters__row.big-letters__row--small 
-                            span king&nbsp;&nbsp;
-                            span watchmaker 
-                        .big-letters__row.big-letters__row--small
-                            span fast train&nbsp;&nbsp;
-                            span eagle 
-                        .big-letters__row.big-letters__row--small
-                            span little prince&nbsp;&nbsp;
-                        .big-letters__row.big-letters__row--small
-                            span lion&nbsp;&nbsp;
-                            span angel of the mo 
+                    video.main-page__video(width="100%" autoplay loop) 
+                      source(src="./images/AKA-Web-Loading.mp4" type="video/mp4") 
                     +banner
         .final 
             +header("loading")
