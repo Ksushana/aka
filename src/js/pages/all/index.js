@@ -88,7 +88,7 @@ function getData(evt) {
     const place = document.getElementsByName('place')[0].value;
     const nicknameOptions = categoryNicknames[cyclist];
     const nickname = nicknameOptions[Math.floor(Math.random()*nicknameOptions.length)]
-    result.innerHTML = "The " + nickname + "<br>" + " of " + place;
+    result.innerHTML = "The " + nickname + "<br>" + " of " + "<br>" + place;
     resultText = `The ${nickname} of ${place}`;
     resultText = resultText.toUpperCase();
 }
