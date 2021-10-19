@@ -181,6 +181,10 @@ if (imageElem) {
     shareFacebook()
 }
 
+// window.onload=function(){
+//     document.getElementById("my_video").autoplay;
+//   }
+
 
 
 export default init;

@@ -9,35 +9,128 @@
     <meta property="og:type" content="website">
     <meta name="viewport" content="width=device-width">
     <title>Cycling Nickname Generator </title>
-    <style>
-      body {
-        background-color: #000000;
-      }
-    </style>
   <link href="css/bundle.min.css" rel="stylesheet"></head>
   <body>
-    <header class="header--black header">
-      <div class="header__logo">
+    <header class="header">
+      <div class="header__logo header__logo--white">
         <svg class="svg-icon svg-icon--logo">
           <use xlink:href="#logo"></use>
         </svg>
       </div>
-      <p class="header__text">
-         created by conductor <br>
-        a design agency dedicated to cycling <br>
-        aka.conductorstudio.com
-      </p>
     </header>
     <main> 
-      <div class="container">
-        <div class="main-page"> 
-          <div class="big-letters"> 
-            <div class="big-letters__row big-letters__row--1">the </div>
-            <div class="big-letters__row big-letters__row--2">eagle </div>
-            <div class="big-letters__row big-letters__row--3">of </div>
-            <div class="big-letters__row big-letters__row--4">toledo </div>
-          </div><a class="button button--white main-page__button" href="./randomizer.html">let’s begin</a>
-          <div class="banner"> <span>Conductor to supply intro animation</span></div>
+      <div class="container randomize">
+        <div class="intro">
+          <header class="header--black header">
+            <div class="header__logo">
+              <svg class="svg-icon svg-icon--logo">
+                <use xlink:href="#logo"></use>
+              </svg>
+            </div>
+            <p class="header__text">
+               created by conductor <br>
+              a design agency dedicated to cycling <br>
+              aka.conductorstudio.com
+            </p>
+          </header>
+          <div class="container">
+            <div class="main-page"> 
+              <video class="main-page__video" id="my_video" width="100%" height="400px" autoplay loop muted> 
+                <source src="./images/AKA-Web-Intro.mp4" type="video/mp4">
+                <source src="./images/AKA-Web-Intro.ogg" type="video/ogg">
+              </video><a class="button button--white main-page__button" href="./randomizer.html">let’s begin</a>
+              <div class="banner"> <span>Conductor to supply intro animation</span></div>
+            </div>
+          </div>
+        </div>
+        <form action="">
+          <div class="block question-1">
+            <h2 class="title">what type of cyclist are you?</h2>
+            <div class="radio-form"> 
+              <input class="radio-form__input" type="radio" name="cyclist" id="goat" value="mountain goat">
+              <label class="radio-form__label button" for="goat">mountain goat</label>
+              <input class="radio-form__input" type="radio" name="cyclist" id="sprinter" value="full gas sprinter">
+              <label class="radio-form__label button" for="sprinter">full gas sprinter </label>
+              <input class="radio-form__input" type="radio" name="cyclist" id="bandit" value="breakaway bandit">
+              <label class="radio-form__label button" for="bandit">breakaway bandit</label>
+              <input class="radio-form__input" type="radio" name="cyclist" id="botherer" value="broom wagon botherer">
+              <label class="radio-form__label button" for="botherer">broom wagon botherer</label>
+              <input class="radio-form__input" type="radio" name="cyclist" id="domestique" value="super domestique">
+              <label class="radio-form__label button" for="domestique">super domestique</label>
+              <input class="radio-form__input" type="radio" name="cyclist" id="captain" value="captain of the road">
+              <label class="radio-form__label button" for="captain">captain of the road</label>
+              <div class="radio-form__submit"> 
+                <button class="button button--submit button--disabled radio-form__submit--1" type="button">onwards!</button>
+              </div>
+            </div>
+          </div>
+          <div class="block question-2 hidden">
+            <h2 class="title">please name a favourite place</h2>
+            <div class="radio-form"> 
+              <input class="radio-form__text-input input" type="text" name="place" id="place" placeholder="enter the city, town, village or place that means something to you">
+              <p class="radio-form__note">psst... try and keep it under 12 characters in length</p>
+              <div class="radio-form__submit"> 
+                <button class="button button--submit button--disabled radio-form__submit--2" type="submit">next</button>
+              </div>
+            </div>
+          </div>
+        </form>
+        <div class="block result hidden">
+          <p class="result__intro">congratulations. you are...</p>
+          <p class="result__result" id="contentToWrite1"> the butterfly of bermondsey</p>
+          <button class="result__button button" type="button" name="name"> <span class="result__button--desktop">generate qr with your nickname  </span><span class="result__button--mobile">generate link with your nickname  </span></button>
+        </div>
+        <div class="send-block hidden"> 
+          <div class="send-block__note send-block__note--desktop title">scan the qr code with your nickname to share with friends</div>
+          <div class="send-block__note send-block__note--mobile title">follow the link with your nickname to share with friends</div><a class="send-block__link" href="">tap here</a>
+          <div id="qrcode"></div>
+          <button class="button send-block--finish" type="button">Finish            </button>
+        </div>
+        <div class="radio-form__reset"> <a class="radio-form__reset-label" onClick="window.location.reload()"> 
+            <svg class="svg-icon svg-icon--restart">
+              <use xlink:href="#restart"></use>
+            </svg></a></div>
+        <div class="created"> 
+          <p>created by conductor</p>
+        </div>
+        <div class="main-page loading">
+          <header class="header--black header">
+            <div class="header__logo">
+              <svg class="svg-icon svg-icon--logo">
+                <use xlink:href="#logo"></use>
+              </svg>
+            </div>
+            <p class="header__text">
+               please wait.... <br>
+              We are digging deep into the archives for your legendary cycling nickname
+            </p>
+          </header>
+          <div class="container">
+            <div class="main-page"> 
+              <video class="main-page__video" width="100%" autoplay loop> 
+                <source src="./images/AKA-Web-Loading.mp4" type="video/mp4">
+              </video>
+              <div class="banner"> <span>Conductor to supply intro animation</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="final"> 
+          <header class="header--black header">
+            <div class="header__logo">
+              <svg class="svg-icon svg-icon--logo">
+                <use xlink:href="#logo"></use>
+              </svg>
+            </div>
+            <p class="header__text">
+               please wait.... <br>
+              We are digging deep into the archives for your legendary cycling nickname
+            </p>
+          </header>
+          <div class="container">
+            <div class="main-page"> 
+              <div class="final__text">great, thanks.</div><a class="button button--white main-page__button" onClick="window.location.reload()">generate another nickname</a>
+            </div>
+          </div>
         </div>
       </div>
     </main><svg width="0" height="0" class="hidden">

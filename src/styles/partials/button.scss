@@ -13,6 +13,7 @@
     color: $color-black;
     border: 3px solid #000000;
     border-radius: $border-radius;
+    cursor: pointer;
    
     @media  (max-width:$mobile-width) {
         border: 2px solid #000000;
