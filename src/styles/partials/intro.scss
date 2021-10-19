@@ -15,4 +15,7 @@
       opacity: 0;
       pointer-events: none;
     }
+    @media (max-width: 812px) and (orientation: vertical) { 
+      padding-bottom: 60px;
+   }
 }
