@@ -1,0 +1,15 @@
+
+{
+    "name": "Cycling Nickname",
+    "share_target": {
+        "action": "./upload",
+        "method": "POST",
+        "enctype": "multipart/form-data",
+        "params": {
+            "files": [{
+                "name": "file",
+                "accept": ["image/*"]
+            }]
+        }
+    }
+  }

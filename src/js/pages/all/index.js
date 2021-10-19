@@ -88,7 +88,7 @@ function getData(evt) {
     const place = document.getElementsByName('place')[0].value;
     const nicknameOptions = categoryNicknames[cyclist];
     const nickname = nicknameOptions[Math.floor(Math.random()*nicknameOptions.length)]
-    result.innerHTML = "The " + nickname + "<br>" + " of " + "<br>" + place;
+    result.innerHTML = "The " + nickname + "<br>" + " of " + place;
     resultText = `The ${nickname} of ${place}`;
     resultText = resultText.toUpperCase();
 }
@@ -134,9 +134,10 @@ function shareSocial() {
         // ];
 
         const shareData = {
-            title: 'Cycling Nickname',
-            text: 'Check my Cycling Nickname',
-            url: imageElem.src,
+            // title: 'Cycling Nickname',
+            // text: 'Check my Cycling Nickname',
+            // url: imageElem.src,
+            file: [imageElem]
           }
         
           const btn = document.getElementById('fb-share-button');
