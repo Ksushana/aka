@@ -120,22 +120,9 @@ function shareSocial() {
     var fbButton = document.getElementById('fb-share-button');
     if (fbButton) {
         var url = window.location.href;
-        // const response = fetch(imageElem.src);
-        // const blob = response.blob();
-        // const filesArray = [
-        //     new File(
-        //     [blob],
-        //     imageElem.src,
-        //     {
-        //         type: "image/jpeg",
-        //         lastModified: new Date().getTime()
-        //     }
-        // )
-        // ];
 
         const shareData = {
-            // url: imageElem.src,
-
+            url: imageElem.src,
         }
     
         const btn = document.getElementById('fb-share-button');
