@@ -95,7 +95,7 @@ function getData(evt) {
 
 
 function generateQR() {
-    const url = `https://ksushana.github.io/aka/build/result.html?${resultText}`;
+    const url = `https://aka.conductorstudio.com/result.html?${resultText}`;
     // const qrcode = 
     new QRCode(document.getElementById('qrcode'), {
         text: url,
@@ -123,15 +123,17 @@ function shareSocial() {
 
         const shareData = {
             url: imageElem.src,
+            files: imageElem,
         }
     
         const btn = document.getElementById('fb-share-button');
     
         btn.addEventListener('click',  () => {
-        if (navigator.share) {
+            if (navigator.canShare && navigator.canShare({ files: imageElem })) {
             try {
             navigator.share(shareData)
             } catch(err) {
+                alert("ooops")
             }
         } else {
             
