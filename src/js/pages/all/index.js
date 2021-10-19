@@ -134,10 +134,7 @@ function shareSocial() {
         // ];
 
         const shareData = {
-            title: 'Cycling Nickname',
-            text: 'Check my Cycling Nickname',
-            // url: imageElem.src,
-            file: [imageElem]
+            url: imageElem.src,
           }
         
           const btn = document.getElementById('fb-share-button');
