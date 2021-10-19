@@ -115,6 +115,7 @@ function switchToThankYouPage(evt) {
     document.body.style.backgroundColor = "#000000";
     QRBlock.classList.add('hidden');
 }
+const imageElem = document.querySelector('.image-share-block img');
 
 function shareSocial() {
     var fbButton = document.getElementById('fb-share-button');
@@ -133,10 +134,9 @@ function shareSocial() {
             try {
             navigator.share(shareData)
             } catch(err) {
-                alert("ooops")
             }
         } else {
-            
+            imageElem.download;
         }
         });
     }
@@ -166,7 +166,7 @@ if(randomize) {
     showFinalBlockBtn.addEventListener('click', switchToThankYouPage);
 }
 
-const imageElem = document.querySelector('.image-share-block img');
+
 if (imageElem) {
     const nickname = window.location.search.replace('?', '').replaceAll('%20', " ");
     const nicknamesplit = nickname.split(" ");
