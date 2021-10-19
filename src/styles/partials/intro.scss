@@ -11,12 +11,22 @@
     display: flex;
     flex-direction: column;
     z-index: 10;
-    top: -70px;
-    padding-bottom: 70px;
-    transform: translateY(70px);
+    
     &--is-hidden {
       opacity: 0;
       pointer-events: none;
     }
-    
+    @media (max-width: 812px) and (orientation: portrait) { 
+      top: -70px;
+    padding-bottom: 140px;
+    transform: translateY(70px);
+
+    .main-page__button {
+      width: calc(100% - 40px);
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 15.66667vh;
+    }
+   }
 }
