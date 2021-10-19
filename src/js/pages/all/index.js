@@ -95,7 +95,7 @@ function getData(evt) {
 
 
 function generateQR() {
-    const url = `https://aka.conductorstudio.com/result.html?${resultText}`;
+    const url = `https://ksushana.github.io/aka/build/result.html?${resultText}`;
     // const qrcode = 
     new QRCode(document.getElementById('qrcode'), {
         text: url,
