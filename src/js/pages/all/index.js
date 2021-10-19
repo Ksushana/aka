@@ -134,8 +134,8 @@ function shareSocial() {
         // ];
 
         const shareData = {
-            // title: 'Cycling Nickname',
-            // text: 'Check my Cycling Nickname',
+            title: 'Cycling Nickname',
+            text: 'Check my Cycling Nickname',
             // url: imageElem.src,
             file: [imageElem]
           }
