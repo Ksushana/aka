@@ -184,9 +184,7 @@ if (imageElem) {
     const name = nickname.substring(4, nickname.indexOf("OF")); 
     const place = nickname.substring(nickname.indexOf("OF")+3); 
 
-
-    // imageElem.src="https://img.bruzu.com/?bi=https://ucarecdn.com/8aeee6e6-1eea-4575-a6fb-7f3a53055868/&bi.o=NaN&h=1080&w=1080&a.tp=textbox&a.ox=center&a.oy=center&a.x=560&a.y=517&a.w=540&a.h=389&a.t=" + window.location.search.replace('?', '').replaceAll('%20', " ") + "&a.ta=center&a.fs=86&a.cs=-61&a.lh=1&a.fw=700&a.ff=Open Sans Condensed&a.maxHeight=488";
-    imageElem.src="https://img.bruzu.com/?bi=https://ucarecdn.com/8aeee6e6-1eea-4575-a6fb-7f3a53055868/&bi.o=NaN&h=1080&w=1080&a.tp=textbox&a.ox=center&a.oy=center&a.x=540&a.y=533&a.w=540&a.h=136&a.t=OF&a.ta=center&a.fs=120&a.lh=1&a.fw=700&a.ff=Roboto Condensed&a.maxHeight=488&b.tp=textbox&b.ox=center&b.oy=center&b.x=540&b.y=405&b.w=967&b.h=136&b.t=" + name + "&b.ta=center&b.fs=120&b.lh=1&b.fw=700&b.ff=Roboto Condensed&b.maxHeight=488&c.tp=textbox&c.ox=center&c.oy=center&c.x=540&c.y=270&c.w=537&c.h=136&c.t=THE&c.ta=center&c.fs=120&c.lh=1&c.fw=700&c.ff=Roboto Condensed&c.maxHeight=488&d.tp=textbox&d.ox=center&d.oy=center&d.x=540&d.y=664&d.w=995&d.h=136&d.t=" + place + "&d.ta=center&d.fs=120&d.lh=1&d.fw=700&d.ff=Roboto Condensed&d.maxHeight=488";
+    imageElem.src="https://img.bruzu.com/?bi=https://ucarecdn.com/8aeee6e6-1eea-4575-a6fb-7f3a53055868/&bi.o=NaN&h=1080&w=1080&a.tp=textbox&a.ox=center&a.oy=center&a.x=540&a.y=533&a.w=540&a.h=113&a.t=OF&a.ta=center&a.fs=100&a.cs=-35&a.lh=1&a.fw=700&a.ff=Open Sans Condensed&a.maxHeight=488&b.tp=textbox&b.ox=center&b.oy=center&b.x=540&b.y=405&b.w=1076&b.h=113&b.t=" + name + "&b.ta=center&b.fs=100&b.cs=-35&b.lh=1&b.fw=700&b.ff=Open Sans Condensed&b.maxHeight=488&c.tp=textbox&c.ox=center&c.oy=center&c.x=540&c.y=271&c.w=1013&c.h=113&c.t=THE&c.ta=center&c.fs=100&c.cs=-35&c.lh=1&c.fw=700&c.ff=Open Sans Condensed&c.maxHeight=488&d.tp=textbox&d.ox=center&d.oy=center&d.x=540&d.y=664&d.w=1078&d.h=113&d.t=" + place + "&d.ta=center&d.fs=100&d.cs=-35&d.lh=1&d.fw=700&d.ff=Open Sans Condensed&d.maxHeight=488";
     shareSocial()
 }
 
