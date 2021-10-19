@@ -120,24 +120,23 @@ function shareSocial() {
     var fbButton = document.getElementById('fb-share-button');
     if (fbButton) {
         var url = window.location.href;
-        const response = fetch(imageElem.src);
-        const blob = response.blob();
-        const filesArray = [
-            new File(
-            [blob],
-            imageElem.src,
-            {
-                type: "image/jpeg",
-                lastModified: new Date().getTime()
-            }
-        )
-        ];
+        // const response = fetch(imageElem.src);
+        // const blob = response.blob();
+        // const filesArray = [
+        //     new File(
+        //     [blob],
+        //     imageElem.src,
+        //     {
+        //         type: "image/jpeg",
+        //         lastModified: new Date().getTime()
+        //     }
+        // )
+        // ];
 
         const shareData = {
             title: 'Cycling Nickname',
             text: 'Check my Cycling Nickname',
             url: imageElem.src,
-            files: filesArray,
           }
         
           const btn = document.getElementById('fb-share-button');

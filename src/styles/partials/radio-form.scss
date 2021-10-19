@@ -21,7 +21,7 @@
         cursor: pointer;
         max-width: unset;
         white-space: nowrap;
-        @media  (max-width:812px) {
+        @media  (max-width:$tablet-width) {
             width: 48%;
         }
         @media  (max-width:$mobile-width) {
@@ -59,7 +59,7 @@
         bottom: size(48px);
         @media  (max-width:$mobile-width) {
             right: 20px;
-            bottom: 65px;
+            bottom: 135px;
         }
         
     }

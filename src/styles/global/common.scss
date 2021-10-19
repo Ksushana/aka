@@ -35,6 +35,10 @@ main {
   flex-direction: column;
   overflow: hidden;
   position: relative;
+  @media (max-width: 768px)and (orientation: portrait) { 
+    padding-bottom: 70px;
+ }
+ 
 }
 
 .block {

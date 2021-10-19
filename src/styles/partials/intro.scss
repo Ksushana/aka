@@ -18,15 +18,15 @@
     }
     @media (max-width: 812px) and (orientation: portrait) { 
       top: -70px;
-    padding-bottom: 70px;
-    transform: translateY(70px);
+      padding-bottom: 70px;
+      transform: translateY(70px);
 
-    .main-page__button {
-      width: calc(100% - 40px);
-      position: fixed;
-      left: 50%;
-      transform: translateX(-50%);
-      bottom: 10.66667vh;
-    }
+      .main-page__button {
+        width: calc(100% - 40px);
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 10.66667vh;
+      }
    }
 }
