@@ -62,7 +62,6 @@ function getNicknameOptions() {
                     
                 }
                 categoryNicknames[category].push(name);
-                console.log(name)
             }) 
         })
 }
@@ -88,7 +87,6 @@ function getData(evt) {
     const cyclist = document.querySelector('input[name="cyclist"]:checked').value;
     const place = document.getElementsByName('place')[0].value;
     const nicknameOptions = categoryNicknames[cyclist];
-    console.log({ nicknameOptions })
     const nickname = nicknameOptions[Math.floor(Math.random()*nicknameOptions.length)]
     result.innerHTML = "The " + nickname + "<br>" + " of " + place;
     resultText = `The ${nickname} of ${place}`;
@@ -98,7 +96,6 @@ function getData(evt) {
 
 function generateQR() {
     const url = `https://ksushana.github.io/aka/build/result.html?${resultText}`;
-    console.log({ url })
     // const qrcode = 
     new QRCode(document.getElementById('qrcode'), {
         text: url,
@@ -123,12 +120,24 @@ function shareSocial() {
     var fbButton = document.getElementById('fb-share-button');
     if (fbButton) {
         var url = window.location.href;
+        const response = fetch(imageElem.src);
+        const blob = response.blob();
+        const filesArray = [
+            new File(
+            [blob],
+            imageElem.src,
+            {
+                type: "image/jpeg",
+                lastModified: new Date().getTime()
+            }
+        )
+        ];
 
         const shareData = {
             title: 'Cycling Nickname',
             text: 'Check my Cycling Nickname',
-            url: window.location.href,
-            files: imageElem.src,
+            url: imageElem.src,
+            files: filesArray,
           }
         
           const btn = document.getElementById('fb-share-button');
