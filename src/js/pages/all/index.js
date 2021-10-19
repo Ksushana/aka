@@ -119,7 +119,7 @@ function switchToThankYouPage(evt) {
     QRBlock.classList.add('hidden');
 }
 
-function shareFacebook() {
+function shareSocial() {
     var fbButton = document.getElementById('fb-share-button');
     if (fbButton) {
         var url = window.location.href;
@@ -127,16 +127,20 @@ function shareFacebook() {
         const shareData = {
             title: 'Cycling Nickname',
             text: 'Check my Cycling Nickname',
-            url: imageElem.src
+            url: window.location.href,
+            files: imageElem.src,
           }
         
           const btn = document.getElementById('fb-share-button');
         
           btn.addEventListener('click',  () => {
-            try {
-            //   await 
-              navigator.share(shareData)
-            } catch(err) {
+            if (navigator.share) {
+                try {
+                navigator.share(shareData)
+                } catch(err) {
+                }
+            } else {
+                
             }
           });
     }
@@ -168,17 +172,17 @@ if(randomize) {
 
 const imageElem = document.querySelector('.image-share-block img');
 if (imageElem) {
-    imageElem.src="https://img.bruzu.com/?bi=https://ucarecdn.com/2d87b3bf-113f-4008-8ed9-33d72d472760/&bi.o=NaN&h=1080&w=1080&a.tp=textbox&a.ox=center&a.oy=center&a.x=540&a.y=512&a.w=796&a.h=363&a.t=" + window.location.search.replace('?', '') + "&a.ta=center&a.fs=107&a.lh=1&a.fw=700&a.ff=Roboto Condensed&a.maxHeight=488";
+    imageElem.src="https://img.bruzu.com/?bi=https://ucarecdn.com/8aeee6e6-1eea-4575-a6fb-7f3a53055868/&bi.o=NaN&h=1080&w=1080&a.tp=textbox&a.ox=center&a.oy=center&a.x=560&a.y=517&a.w=540&a.h=389&a.t=" + window.location.search.replace('?', '') + "&a.ta=center&a.fs=86&a.cs=-61&a.lh=1&a.fw=700&a.ff=Open Sans Condensed&a.maxHeight=488";
     var metaTags=document.getElementsByTagName("meta");
 
     var fbAppIdContent = "";
     for (var i = 0; i < metaTags.length; i++) {
         if (metaTags[i].getAttribute("property") == "og:image") {
-            fbAppIdContent = metaTags[i].setAttribute("content", "https://img.bruzu.com/?bi=https://ucarecdn.com/2d87b3bf-113f-4008-8ed9-33d72d472760/&bi.o=NaN&h=1080&w=1080&a.tp=textbox&a.ox=center&a.oy=center&a.x=540&a.y=512&a.w=796&a.h=363&a.t=" + window.location.search.replace('?', '') + "&a.ta=center&a.fs=107&a.lh=1&a.fw=700&a.ff=Roboto Condensed&a.maxHeight=488");
+            fbAppIdContent = metaTags[i].setAttribute("content", "https://img.bruzu.com/?bi=https://ucarecdn.com/8aeee6e6-1eea-4575-a6fb-7f3a53055868/&bi.o=NaN&h=1080&w=1080&a.tp=textbox&a.ox=center&a.oy=center&a.x=560&a.y=517&a.w=540&a.h=389&a.t=" + window.location.search.replace('?', '') + "&a.ta=center&a.fs=86&a.cs=-61&a.lh=1&a.fw=700&a.ff=Open Sans Condensed&a.maxHeight=488");
             break;
         }
     }
-    shareFacebook()
+    shareSocial()
 }
 
 // window.onload=function(){
