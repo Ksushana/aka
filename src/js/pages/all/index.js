@@ -124,19 +124,18 @@ function shareSocial() {
 
         const shareData = {
             url: imageElem.src,
-            files: imageElem,
         }
     
         const btn = document.getElementById('fb-share-button');
     
         btn.addEventListener('click',  () => {
-            if (navigator.canShare && navigator.canShare({ files: imageElem })) {
+            if (navigator.share) {
             try {
             navigator.share(shareData)
             } catch(err) {
             }
         } else {
-            imageElem.download;
+            window.open(imageElem.src)
         }
         });
     }
