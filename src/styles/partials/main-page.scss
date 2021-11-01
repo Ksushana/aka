@@ -1,38 +1,47 @@
 .main-page {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex-grow: 1;
-    
-    &__button {
-        margin: -2vh auto 10vh;
-        z-index: 111;
-       
-        @media  (max-width:$mobile-width) {
-            margin: auto auto size-vh(40px, 375px);
-            width: calc(100% - 40px);
-        }
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+
+  &__button {
+    margin: -2vh auto 10vh;
+    z-index: 111;
+
+    @media (max-width: $mobile-width) {
+      margin: auto auto size-vh(40px, 375px);
+      width: calc(100% - 40px);
     }
-    &__video {
-        height: 75vh;
-        margin-top: -15vh;
-        -o-object-fit: contain;
-        object-fit: contain;
-        @media (max-width: 1024px) and (orientation: landscape){ 
-            height: 72vh;
-            margin-top: -10vh;
-            -o-object-fit: cover;
-            object-fit: cover;
-         }
-         @media (max-width: 1024px)and (orientation: portrait) { 
-            height: 60vh;
-            margin-top: -10vh;
-            -o-object-fit: cover;
-            object-fit: cover;
-         }
-        @media (max-width: 812px) and (orientation: landscape) { 
-            -o-object-fit: contain;
-            object-fit: contain;
-         }
+  }
+  &__video {
+    height: 75vh;
+    margin-top: -15vh;
+    -o-object-fit: contain;
+    object-fit: contain;
+    @media (max-width: 1024px) and (orientation: landscape) {
+      height: 72vh;
+      margin-top: -10vh;
+      -o-object-fit: cover;
+      object-fit: cover;
     }
+    @media (max-width: 1024px) and (orientation: portrait) {
+      height: 60vh;
+      margin-top: -10vh;
+      -o-object-fit: cover;
+      object-fit: cover;
+    }
+    @media (max-width: 600px) and (orientation: portrait) {
+      height: auto;
+      width: 140%;
+      margin-top: auto;
+      margin-left: -20%;
+      margin-bottom: auto;
+      padding-bottom: calc(10.666vh + 46px);
+    }
+
+    @media (max-width: 812px) and (orientation: landscape) {
+      -o-object-fit: contain;
+      object-fit: contain;
+    }
+  }
 }
