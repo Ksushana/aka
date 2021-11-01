@@ -95,7 +95,7 @@ function getData(evt) {
 
 
 function generateQR() {
-    const url = `https://ksushana.github.io/aka/build/result.html?${resultText}`;
+    const url = `./result.html?${resultText}`;
     // const qrcode = 
     new QRCode(document.getElementById('qrcode'), {
         text: url,
@@ -169,10 +169,21 @@ if(randomize) {
 if (imageElem) {
     const nickname = window.location.search.replace('?', '').replaceAll('%20', " ");
     const nicknamesplit = nickname.split(" ");
-    const name = nickname.substring(4, nickname.indexOf("OF")).toUpperCase(); 
+    const name = nickname.substring(4, nickname.indexOf("OF")-1).toUpperCase(); 
     const place = nickname.substring(nickname.indexOf("OF")+3).toUpperCase(); 
+    let size;
+    if (name.length > 10 || place.length > 10) {
+        size = 90
+    } else 
+    if (name.length > 12 || place.length > 12) {
+       size = 80
+    } else {
+       size = 120
+    }
 
-    imageElem.src="https://img.bruzu.com/?bi=https://ucarecdn.com/49a68861-2435-4d58-b782-c616e78a5166/&bi.o=undefined&h=1080&w=1080&a.tp=textbox&a.ox=center&a.oy=center&a.x=540&a.y=563&a.w=540&a.h=113&a.t=OF&a.ta=center&a.fs=100&a.cs=-35&a.lh=1&a.fw=700&a.ff=Open Sans Condensed&a.maxHeight=488&b.tp=textbox&b.ox=center&b.oy=center&b.x=540&b.y=421&b.w=1076&b.h=113&b.t=" + name + "&b.ta=center&b.fs=100&b.cs=-35&b.lh=1&b.fw=700&b.ff=Open Sans Condensed&b.maxHeight=488&c.tp=textbox&c.ox=center&c.oy=center&c.x=540&c.y=288&c.w=1013&c.h=113&c.t=THE&c.ta=center&c.fs=100&c.cs=-35&c.lh=1&c.fw=700&c.ff=Open Sans Condensed&c.maxHeight=488&d.tp=textbox&d.ox=center&d.oy=center&d.x=540&d.y=702&d.w=1078&d.h=113&d.t=" + place + "&d.ta=center&d.fs=100&d.cs=-35&d.lh=1&d.fw=700&d.ff=Open Sans Condensed&d.maxHeight=488"
+    
+    
+    imageElem.src="https://img.bruzu.com/?bi=https://ucarecdn.com/49a68861-2435-4d58-b782-c616e78a5166/&bi.o=NaN&h=1080&w=1080&a.tp=textbox&a.ox=center&a.oy=center&a.x=540&a.y=591&a.w=540&a.h=136&a.t=OF&a.ta=center&a.fs=" + size + "&a.cs=-34&a.lh=1&a.fw=400&a.ff=Archivo Black&a.maxHeight=488&b.tp=textbox&b.ox=center&b.oy=center&b.x=540&b.y=484&b.w=1076&b.h=136&b.t=" + name + "&b.ta=center&b.fs=" + size + "&b.cs=-35&b.lh=1&b.fw=400&b.ff=Archivo Black&b.maxHeight=488&c.tp=textbox&c.ox=center&c.oy=center&c.x=540&c.y=379&c.w=1013&c.h=136&c.t=THE&c.ta=center&c.fs=" + size + "&c.cs=-36&c.lh=1&c.fw=400&c.ff=Archivo Black&c.maxHeight=488&d.tp=textbox&d.ox=center&d.oy=center&d.x=540&d.y=697&d.w=1078&d.h=136&d.t=" + place + "&d.ta=center&d.fs=" + size + "&d.cs=-65&d.lh=1&d.fw=400&d.ff=Archivo Black&d.maxHeight=488"
     shareSocial()
 }
 
